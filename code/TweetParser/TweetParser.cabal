@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: de9ee7ba62ff9fdfa1bf0d296871b9ac264e4f80611a5b9310bb9a10567052b0
+-- hash: 54ca8316b287fb946dba82613abf506f761c926b3eee2870a152c15904336fd2
 
 name:           TweetParser
 version:        0.1.0.0
@@ -27,7 +27,8 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Constants
+      Parse
   other-modules:
       Paths_TweetParser
   hs-source-dirs:
