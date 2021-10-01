@@ -38,8 +38,6 @@ stringToGuaranteedMonth string =
     (error $ "This should be unreachable, but something went awry parsing month: " <> unpack string) 
     (stringToMonth string)
 
-parseNatural = error "Unimplemented"
-
 data Timestamp = Timestamp {
   year :: Int,
   month :: Int,
@@ -49,36 +47,52 @@ data Timestamp = Timestamp {
   second :: Int
 } deriving (Show)
 
-dayOfWeekNames = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
+dayOfWeekNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 parseSpace = literal " "
 parseColon = literal ":"
 parseTimeZone = literal "+0000"
-parseDayOfWeek = choice [literal dayOfWeek | dayOfWeek <- dayOfWeekNames]
-parseMonth = choice [literalWithReturn strictMonthName lazyMonthName | (strictMonthName, lazyMonthName) <- Data.List.zip monthNames monthNames]
+parseDayOfWeek = choice [literal dayOfWeek | dayOfWeek <- dayOfWeekNames] Data.Attoparsec.Text.<?> "day of week"
+parseMonth = choice [literalWithReturn strictMonthName lazyMonthName | (strictMonthName, lazyMonthName) <- Data.List.zip monthNames monthNames] Data.Attoparsec.Text.<?> "month"
+
+parseNatural = decimal
+
+parseSingleDigit =
+  do char <- digit
+     return (read [char] :: Int)
+
+parseNDigits 0 = return 0
+parseNDigits n = 
+  do prefix <- parseNDigits (n - 1)
+     lastDigit <- parseSingleDigit
+     return (10 * prefix + lastDigit)
+
+parseTwoDigits = parseNDigits 2
+parseFourDigits = parseNDigits 4
 
 parseTimestamp = do
   parseDayOfWeek -- We ignore the result
   parseSpace
   monthAsString <- parseMonth
   let (month :: Int) = stringToGuaranteedMonth monthAsString
-  dayOfMonth <- parseNatural
   parseSpace
-  hour <- parseNatural
+  dayOfMonth <- parseTwoDigits
+  parseSpace
+  hour <- parseTwoDigits
   parseColon
-  minute <- parseNatural
+  minute <- parseTwoDigits
   parseColon
-  second <- parseNatural
+  second <- parseTwoDigits
   parseSpace
   parseTimeZone
   parseSpace
-  year <- parseNatural
+  year <- parseFourDigits
   return Timestamp{..}
 
 textParserToJSONParser typeName textParser = withText typeName $ \text ->
-  case parse textParser text of
-    (Fail _ _ _) -> fail "Died"
-    (Done _ r) -> return r
+  case parseOnly textParser text of
+    (Left description) -> fail $ "Failure in parsing " <> typeName <> "; on text: " <> (unpack text) <> "; error description: " <> description
+    (Right x) -> return x
 
 instance FromJSON Timestamp where
   parseJSON = textParserToJSONParser "Timestamp" parseTimestamp
@@ -87,7 +101,7 @@ instance FromJSON Timestamp where
 data Tweet = Tweet {
   id :: Text,
   full_text  :: Text,
-  created_at :: Text,
+  created_at :: Timestamp,
   favorite_count :: Text,
   retweet_count :: Text,
   in_reply_to_status_id :: Maybe Text,
