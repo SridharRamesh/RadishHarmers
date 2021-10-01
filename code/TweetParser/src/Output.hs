@@ -12,8 +12,8 @@ import Data.Text.Lazy.Builder
 show x = Data.String.fromString $ Prelude.show x
 
 lineBreak = "\n<br>\n"
-
 paragraph x = "<p>\n" <> x <> "\n</p>\n"
+horizontalRule = "\n<hr>\n"
 
 dateToText :: Date -> Text
 dateToText Date{..} = (show year) <> "-" <> (show month) <> "-" <> (show dayOfMonth)
@@ -29,7 +29,7 @@ makeTweet Tweet{..} = paragraph $ intercalate lineBreak
   ["<pre>" <> (toLazyText $ HTMLEntities.Builder.text full_text) <> "</pre>",
    "Timestamp: " <> timestampToText created_at,
    "Id: " <> fromStrict id,
-   "<hr>"
+   horizontalRule
   ]
 
 pageHeader = unlines 
@@ -48,11 +48,11 @@ makePage :: Date -> [Tweet] -> Text
 makePage date tweets = 
   pageHeader
   <>
-  "This is the page for date: "
+  "These are all the tweets and RTs that I made on "
   <>
   dateToText date
   <>
-  " with tweets: \n"
+  horizontalRule
   <>
   mconcat [makeTweet tweet | tweet <- tweets]
   <>

@@ -1,0 +1,536 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This page was generated from TweetParser. -->
+These are all the tweets and RTs that I made on 2020-6-11
+<hr>
+<p>
+<pre>All that&#39;s left in describing this map construction is the vertical distance scale at each point. This is the only way in which this map will differ from Mercator&#39;s.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:0
+<br>
+Id: 1270873886612127744
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>That is to say, we have a fixed horizontal distance scale at each latitude, but again, the horizontal distance scale changes between latitudes just as before, to make all latitudes have the same width as the Equator.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:0
+<br>
+Id: 1270873885534191617
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Let&#39;s again keep longitudes vertical and latitudes horizontal. We&#39;ll drop the requirement that angles be represented accurately, but we&#39;ll keep longitudes spaced in proportion to the angle between them.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:0
+<br>
+Id: 1270873884179431424
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>It&#39;s actually straightforward, after the above explanation, to make a map with accurate areas:</pre>
+<br>
+Timestamp: 2020-6-11 0:22:0
+<br>
+Id: 1270873883055398914
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>You can now go ahead and build the accurate-area map entirely from the above description, same as how you could build the Mercator map from the description I gave before. But what I really want to share is another way to think about this same accurate-area map construction:</pre>
+<br>
+Timestamp: 2020-6-11 0:22:1
+<br>
+Id: 1270873890730934273
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>The distance scaling on the map near any point now depends on direction. This makes angles get all distorted, but the horizontal stretching and vertical squashing cancelling each other out means that areas are now accurately represented.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:1
+<br>
+Id: 1270873889682358273
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Now, we&#39;ll do the opposite of that. We&#39;ll space latitudes apart from each other so that the vertical distance scale at any latitude is squashed smaller in proportion to how horizontal distances are stretched bigger.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:1
+<br>
+Id: 1270873888679964672
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Recall that previously, we spaced latitudes apart from each other so that the vertical distance scale at each point matched the horizontal distance scale; vertical distances and horizontal distances got stretched by the same factor as we moved away from the Equator.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:1
+<br>
+Id: 1270873887681712128
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>That&#39;s right, when we make a map this way, areas on the map are exactly the same as (not merely proportional to, but exactly the same as!) areas on the original globe. So one side effect will be that we can easily measure the area of the entire globe.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:2
+<br>
+Id: 1270873895017512963
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>My claim is that making our map in this way, keeping each latitude at precisely the same height above the ground as it started at, will turn out to be the magic spacing, where vertical squash and horizontal stretch are exact opposites, keeping area the same as it started.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:2
+<br>
+Id: 1270873893998387201
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Take a globe, and place it on the ground with the South pole at the bottom. We&#39;re going to expand all the circles of latitude into the same width [thus turning the globe into a cylinder, which we can unwrap into a map], but we won&#39;t change any latitude&#39;s height above the ground.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:2
+<br>
+Id: 1270873892945608704
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Now turn the ruler perpendicular to the ground at this point, so that instead of lying flat against the globe, it jabs straight into the ground. If we went precisely one Earth radius inwards in this direction, we&#39;d hit the center of the Earth.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:3
+<br>
+Id: 1270873899161595906
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>This ruler is measuring longitudinal distance, which will be squashed into vertical distance on our map. The exact amount of squashing depends on the angle of the ruler&#39;s tilt away from vertical.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:3
+<br>
+Id: 1270873898163281925
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Lay a ruler flat against the globe, aligned longitudinally, at any point. If you do this near the Equator, the ruler will be nearly vertical. If you do this near the North or South pole, the ruler will be nearly horizontal. Inbetween, it&#39;ll be inbetween, of course.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:3
+<br>
+Id: 1270873897039212545
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>But it&#39;s not enough for me to just claim all this. I want to show you why. Why do the latitudinal stretch factor and the longitudinal squash factor of this map match at each point?</pre>
+<br>
+Timestamp: 2020-6-11 0:22:3
+<br>
+Id: 1270873896015794178
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Vertical squash and horizontal stretch exactly cancel out, so our map gets all areas exactly correct.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:4
+<br>
+Id: 1270873903498514432
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>This shows that, at any point at any latitude, the factor by which longitudinal distance is squashed into vertical distance on our map is exactly the same as the factor by this latitude is widened to make our map.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:4
+<br>
+Id: 1270873902001111041
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Which means the squashing factor we saw before is the same as the squashing factor now between the radius of the Earth and this point&#39;s horizontal distance from the polar axis through the center of the Earth. I.e., between the radius of the Earth and the radius of this latitude.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:4
+<br>
+Id: 1270873901028048898
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>But again, the ruler is tilted. However much it was tilted away from vertical before, it&#39;s now tilted the same angle away from horizontal.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:4
+<br>
+Id: 1270873900134674439
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>If you&#39;d like, you can write this in terms of radius: The area of a sphere of radius r is 2πr * 2r = 4πr^2. A beautiful result.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:5
+<br>
+Id: 1270873907353006080
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>There you have it. Not only do we now know how to make accurate-area maps (specifically, the &quot;Lambert cylindrical projection&quot;, named for infamous Christendom-hater Johann Heinrich Lambert), we also now know that a sphere&#39;s area is its circumference times diameter.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:5
+<br>
+Id: 1270873906291843074
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Its width is the length of the Equator; i.e., the circumference of the Earth. Its height is the distance between the North and the South pole; i.e., the diameter of the Earth. And thus, its area, the area of the Earth, is the Earth&#39;s circumference times its diameter.</pre>
+<br>
+Timestamp: 2020-6-11 0:22:5
+<br>
+Id: 1270873905323020288
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>And how large is our map?</pre>
+<br>
+Timestamp: 2020-6-11 0:22:5
+<br>
+Id: 1270873904396021762
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Next time, I&#39;ll talk about the incredible relationship between angles and areas on the Earth, how you can use this to measure the radius of the Earth just using measurements in your neighborhood, and how this connects to what I previously wrote at https://t.co/fQjo10fUIo.</pre>
+<br>
+Timestamp: 2020-6-11 0:26:56
+<br>
+Id: 1270875127631273986
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>In the meanwhile, Twitter sucks for writing math and I&#39;m sure I made a million typos above. I will not bother to correct them, or maybe I will. Now and always, I&#39;ll do whatever I want.</pre>
+<br>
+Timestamp: 2020-6-11 0:26:57
+<br>
+Id: 1270875130261102592
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Or perhaps I&#39;ll talk about how the formula for sphere area also soon gives us sphere volume, how to generalize all this beyond 3d to any number of dimensions, and why this turns out to solve an old puzzle about generalizing the factorial function, telling us the value of (1/2)!.</pre>
+<br>
+Timestamp: 2020-6-11 0:26:57
+<br>
+Id: 1270875129342550019
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Twitter threading sucks so much. This continues at: https://t.co/vw2atWo3cM</pre>
+<br>
+Timestamp: 2020-6-11 0:27:57
+<br>
+Id: 1270875380317028353
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Incidentally, the Lambert who discovered/invented this accurate-area map was also the first person to prove that π can&#39;t be expressed as a ratio of whole numbers; i.e., its digits don&#39;t settle down into an infinite repeating pattern.</pre>
+<br>
+Timestamp: 2020-6-11 0:42:44
+<br>
+Id: 1270879103466508289
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Ugh, I forgot to say so here explicitly, but when I say &quot;expand all circles of latitude into the same width&quot;, I mean specifically the width of the Equator. We&#39;ll expand all circles of latitude to have the same radius as the Earth.</pre>
+<br>
+Timestamp: 2020-6-11 0:54:15
+<br>
+Id: 1270882000363311106
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>RT @RadishHarmers: All I did on Twitter today was get irked at other Twitter-poisoned dummies for being dumb in Twitter-poisoned ways. That…</pre>
+<br>
+Timestamp: 2020-6-11 1:2:32
+<br>
+Id: 1270884086119350274
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>I introduced them to each other at my birth. https://t.co/2rmnscDJ2U</pre>
+<br>
+Timestamp: 2020-6-11 1:47:54
+<br>
+Id: 1270895502985396224
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>RT @earthdistance: There’s this curse that kind of afflicts people who are desperate for attention. their desire for people to pay attentio…</pre>
+<br>
+Timestamp: 2020-6-11 1:55:39
+<br>
+Id: 1270897453491990529
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>RT @RadishHarmers: Between all the RTs, this got millions of Likes, but I don&#39;t think it&#39;s true Mercator sought to inflate the area of Chri…</pre>
+<br>
+Timestamp: 2020-6-11 2:55:50
+<br>
+Id: 1270912599291564033
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>RT @RadishHarmers: In the meanwhile, Twitter sucks for writing math and I&#39;m sure I made a million typos above. I will not bother to correct…</pre>
+<br>
+Timestamp: 2020-6-11 6:23:31
+<br>
+Id: 1270964862357823491
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>The world&#39;s first globe, dating to the late 15th century. Its manufacturer is no longer known, having stamped only the initials &quot;C.C.&quot;. Europe is beautifully, impeccably detailed. There is also a hemispherically large blob marked &quot;India&quot;.</pre>
+<br>
+Timestamp: 2020-6-11 6:27:29
+<br>
+Id: 1270965863609520129
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Oh geez. Oh no. This does not bode well. Going into hiding before folks on here discover my true identity, Christopher Columbus.</pre>
+<br>
+Timestamp: 2020-6-11 6:31:33
+<br>
+Id: 1270966885283233793
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>RT @RadishHarmers: The world&#39;s first globe, dating to the late 15th century. Its manufacturer is no longer known, having stamped only the i…</pre>
+<br>
+Timestamp: 2020-6-11 16:59:39
+<br>
+Id: 1271124952712912896
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>RT @RadishHarmers: Columbus, you dolt! We were to go to India, for its wonderful spices. Black pepper! The mouth waters! Instead, you&#39;ve st…</pre>
+<br>
+Timestamp: 2020-6-11 16:59:51
+<br>
+Id: 1271125001090076674
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>RT @RadishHarmers: Oh geez. Oh no. This does not bode well. Going into hiding before folks on here discover my true identity, Christopher C…</pre>
+<br>
+Timestamp: 2020-6-11 16:59:57
+<br>
+Id: 1271125026998280193
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>Raising millions of dollars to alter the faces on Mount Rushmore, keeping the same four presidents but in a more appropriate alphabetical order.</pre>
+<br>
+Timestamp: 2020-6-11 19:5:56
+<br>
+Id: 1271156730999832577
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>@GarlicCorgi Mount Rushmost</pre>
+<br>
+Timestamp: 2020-6-11 19:9:50
+<br>
+Id: 1271157713817481218
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>@ADJANlANGEL https://t.co/xVsORQ41Km</pre>
+<br>
+Timestamp: 2020-6-11 19:25:7
+<br>
+Id: 1271161560061394944
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>@ArticleIII4lyfe Where can I find them?</pre>
+<br>
+Timestamp: 2020-6-11 22:11:55
+<br>
+Id: 1271203536525721602
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>@ArticleIII4lyfe Oh, I found them. https://t.co/So78rw60Aa</pre>
+<br>
+Timestamp: 2020-6-11 22:16:57
+<br>
+Id: 1271204803339866113
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>@flglmn https://t.co/pngC42g2az</pre>
+<br>
+Timestamp: 2020-6-11 22:20:52
+<br>
+Id: 1271205788493778944
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>@fiImsus Being bisexual has nothing to do with your phone case. If you are sexually attracted to people who are bi, you&#39;re bisexual.</pre>
+<br>
+Timestamp: 2020-6-11 23:2:24
+<br>
+Id: 1271216241462644738
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>The &quot;You should get fired for making the wrong tweets&quot; mindset is most pronounced among those who do the most tweeting, living on the edge.</pre>
+<br>
+Timestamp: 2020-6-11 23:34:55
+<br>
+Id: 1271224423178285057
+<br>
+
+<hr>
+
+</p>
+<p>
+<pre>On Earth 2, scientists are hard at work, desperately trying to figure out why every language among every culture has since ancient times referred to the planet as Earth 2.</pre>
+<br>
+Timestamp: 2020-6-11 23:39:26
+<br>
+Id: 1271225560845385731
+<br>
+
+<hr>
+
+</p>
+</head>
+</html>
