@@ -1,4 +1,6 @@
 module Constants where
 
-inputPath = "../../raw/TweetRecent.js"
-outputDirectory = "../../output/"
+import System.Directory
+
+generateInputPath = canonicalizePath "../../raw/TweetRecent.js"
+generateOutputDirectory = canonicalizePath "../../output/"

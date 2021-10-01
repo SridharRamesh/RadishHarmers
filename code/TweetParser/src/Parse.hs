@@ -1,12 +1,18 @@
-{-# LANGUAGE OverloadedStrings, TemplateHaskell, RecordWildCards, ScopedTypeVariables, DuplicateRecordFields #-}
-module Parse where
+{-# LANGUAGE 
+  OverloadedStrings, 
+  TemplateHaskell, 
+  RecordWildCards, 
+  ScopedTypeVariables, 
+  DuplicateRecordFields, 
+  ViewPatterns
+#-}
+module Parse (Tweet(..), Timestamp(..), Date(..), date, fileParse, extractTweets) where
 
-import Data.Aeson
+import Data.Aeson hiding ((<?>))
 import Data.Aeson.TH
-import qualified Data.Attoparsec.ByteString.Lazy as LazyStringParse
-import Data.Attoparsec.Text
-import GHC.Generics
-import Data.Text
+import qualified Data.Attoparsec.ByteString.Lazy as LazyStringParse -- All our parsers work on ByteStrings rather than Text, because this is what Data.Aeson uses
+import Data.Attoparsec.Text.Lazy
+import Data.Text hiding (map)
 import Data.List
 import Data.Maybe
 import Data.String
@@ -29,23 +35,20 @@ stringToGuaranteedMonth string =
 dayOfWeekNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 parseSpace = literal " "
-  Data.Attoparsec.Text.<?> "space"
+  <?> "space"
 parseColon = literal ":"
-  Data.Attoparsec.Text.<?> "colon"
+  <?> "colon"
 parseTimeZone = literal "+0000"
-  Data.Attoparsec.Text.<?> "timezone"
+  <?> "timezone"
 parseDayOfWeek = choice [literal dayOfWeek | dayOfWeek <- dayOfWeekNames]
-  Data.Attoparsec.Text.<?> "day of week"
+  <?> "day of week"
 parseMonth = choice [literal strictMonthName >> return lazyMonthName | (strictMonthName, lazyMonthName) <- Data.List.zip monthNames monthNames]
-  Data.Attoparsec.Text.<?> "month"
-
-parseNatural = decimal
-  Data.Attoparsec.Text.<?> "natural number"
+  <?> "month"
 
 parseSingleDigit =
   do char <- digit
      return (read [char] :: Int)
-  Data.Attoparsec.Text.<?> "single digit"
+  <?> "single digit"
 
 parseNDigits' 0 = return 0
 parseNDigits' n = 
@@ -53,7 +56,7 @@ parseNDigits' n =
      lastDigit <- parseSingleDigit
      return (10 * prefix + lastDigit)
 parseNDigits n = parseNDigits' n
-  Data.Attoparsec.Text.<?> ((show n) <> " digits")
+  <?> ((show n) <> " digits")
 
 parseTwoDigits = parseNDigits 2
 parseFourDigits = parseNDigits 4
@@ -71,7 +74,7 @@ data Date = Date {
   year :: Int,
   month :: Int,
   dayOfMonth :: Int
-} deriving (Show, Eq, Ord)
+} deriving (Eq, Ord)
 
 date Timestamp{..} = Date{..}
 
@@ -93,7 +96,7 @@ parseTimestamp = do
   parseSpace
   year <- parseFourDigits
   return Timestamp{..}
-  Data.Attoparsec.Text.<?> "timestamp"
+  <?> "timestamp"
 
 textParserToJSONParser typeName textParser = withText typeName $ \text ->
   case parseOnly textParser text of
@@ -102,7 +105,6 @@ textParserToJSONParser typeName textParser = withText typeName $ \text ->
 
 instance FromJSON Timestamp where
   parseJSON = textParserToJSONParser "Timestamp" parseTimestamp
-
 
 data Tweet = Tweet {
   id :: Text,
@@ -123,6 +125,10 @@ $(deriveFromJSON defaultOptions{rejectUnknownFields = True} ''BoxedTweet)
 
 newtype FileTop = FileTop [BoxedTweet]
 $(deriveFromJSON defaultOptions ''FileTop)
+
+extractTweets bytes = case (fromJSON bytes) of
+  Success (FileTop boxedTweets) -> Success (map tweet boxedTweets)
+  Error error -> Error error -- Re-exporting the error at a different type
 
 preludeParser = LazyStringParse.string "window.YTD.tweet.part0 = "
 fileParser = preludeParser >> json
