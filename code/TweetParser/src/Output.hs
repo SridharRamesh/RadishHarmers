@@ -6,6 +6,8 @@ import qualified Prelude
 import Parse
 import Data.Text.Lazy
 import qualified Data.String
+import HTMLEntities.Builder
+import Data.Text.Lazy.Builder
 
 show x = Data.String.fromString $ Prelude.show x
 
@@ -16,12 +18,18 @@ paragraph x = "<p>\n" <> x <> "\n</p>\n"
 dateToText :: Date -> Text
 dateToText Date{..} = (show year) <> "-" <> (show month) <> "-" <> (show dayOfMonth)
 
+timestampToText :: Timestamp -> Text
+timestampToText Timestamp{..} = 
+    (show year) <> "-" <> (show month) <> "-" <> (show dayOfMonth)
+    <> " "
+    <> (show hour) <> ":" <> (show minute) <> ":" <> (show second)
+
 makeTweet :: Tweet -> Text
 makeTweet Tweet{..} = paragraph $ intercalate lineBreak
-  ["Id: " <> fromStrict id,
-   "Text: " <> fromStrict full_text,
-   "Created at: " <> dateToText (date created_at),
-   "----"
+  ["<pre>" <> (toLazyText $ HTMLEntities.Builder.text full_text) <> "</pre>",
+   "Timestamp: " <> timestampToText created_at,
+   "Id: " <> fromStrict id,
+   "<hr>"
   ]
 
 pageHeader = unlines 

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 950db056d20a0bd328d673b3be04e37736257a75e8d5ecb29aaa2dae3e2f36b2
+-- hash: 8b8012c7d25bb1d05a1032239fb5b9b36c0aae4fe16828fad9ee49dbc18b7798
 
 name:           TweetParser
 version:        0.1.0.0
@@ -41,6 +41,7 @@ library
     , bytestring
     , directory
     , filepath
+    , html-entities
     , text
     , utf8-string
   default-language: Haskell2010
@@ -60,6 +61,7 @@ executable TweetParser-exe
     , bytestring
     , directory
     , filepath
+    , html-entities
     , text
     , utf8-string
   default-language: Haskell2010
@@ -80,6 +82,7 @@ test-suite TweetParser-test
     , bytestring
     , directory
     , filepath
+    , html-entities
     , text
     , utf8-string
   default-language: Haskell2010

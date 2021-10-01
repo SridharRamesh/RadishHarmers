@@ -28,6 +28,7 @@ dependencies:
 - attoparsec
 - directory
 - filepath
+- html-entities
 
 library:
   source-dirs: src
