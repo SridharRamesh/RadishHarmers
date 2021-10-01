@@ -3,22 +3,28 @@ module Parse where
 
 import Data.Aeson
 import Data.Aeson.TH
-import qualified Data.ByteString.Lazy.UTF8 as UTF8
-import qualified Data.ByteString.UTF8 as StrictUTF8
-import qualified Data.ByteString.Lazy as ByteString
-import Data.Attoparsec.ByteString.Lazy hiding (string)
-import qualified Data.Attoparsec.ByteString.Lazy
+import qualified Data.Attoparsec.ByteString.Lazy as LazyStringParse
+import Data.Attoparsec.Text
 import GHC.Generics
 import Data.Text
 import Data.List
 import Data.Maybe
 import Data.String
 
-literal = Data.Attoparsec.ByteString.Lazy.string
+-- Note: The argument to literal needs to be a STRICT ByteString, not a lazy one.
+literal x = 
+  do string x -- From Data.Attoparsec
+     return () -- Do not expect to recover the string from this function
 
-preludeParser = literal "window.YTD.tweet.part0 = "
+-- Note: The first argument to literalWithReturn needs to be a STRICT ByteString, not a lazy one.
+-- The second argument needs to be a lazy string.
+literalWithReturn strictMatch lazyReturn =
+  do string strictMatch -- From Data.Attoparsec
+     return lazyReturn
+
+preludeParser = LazyStringParse.string "window.YTD.tweet.part0 = "
 fileParser = preludeParser >> json
-fileParse = parse fileParser
+fileParse = LazyStringParse.parse fileParser
 
 failText text = fail (unpack text)
 
@@ -29,7 +35,7 @@ stringToMonth string = elemIndex string monthNames
 
 stringToGuaranteedMonth string = 
   fromMaybe 
-    (error $ "This should be unreachable, but something went awry parsing month: " <> StrictUTF8.toString string) 
+    (error $ "This should be unreachable, but something went awry parsing month: " <> unpack string) 
     (stringToMonth string)
 
 parseNatural = error "Unimplemented"
@@ -49,7 +55,7 @@ parseSpace = literal " "
 parseColon = literal ":"
 parseTimeZone = literal "+0000"
 parseDayOfWeek = choice [literal dayOfWeek | dayOfWeek <- dayOfWeekNames]
-parseMonth = choice [literal month | month <- monthNames]
+parseMonth = choice [literalWithReturn strictMonthName lazyMonthName | (strictMonthName, lazyMonthName) <- Data.List.zip monthNames monthNames]
 
 parseTimestamp = do
   parseDayOfWeek -- We ignore the result
@@ -68,6 +74,15 @@ parseTimestamp = do
   parseSpace
   year <- parseNatural
   return Timestamp{..}
+
+textParserToJSONParser typeName textParser = withText typeName $ \text ->
+  case parse textParser text of
+    (Fail _ _ _) -> fail "Died"
+    (Done _ r) -> return r
+
+instance FromJSON Timestamp where
+  parseJSON = textParserToJSONParser "Timestamp" parseTimestamp
+
 
 data Tweet = Tweet {
   id :: Text,
