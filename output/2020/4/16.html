@@ -1,0 +1,784 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This page was generated from TweetParser. -->
+This is the page for date: 2020-4-16 with tweets: 
+<p>
+Id: 1250582284505419782
+<br>
+Text: Let ζ(-p) = 1^p + 2^p + 3^p + … be the Riemann zeta function. This converges when the real component of p is &lt; -1. How do we make sense of this for general powers p?
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582283234484224
+<br>
+Text: Everyone talks about the Riemann zeta function like it's tricky to construct and requires thinking about the sophisticated machinery of meromorphic continuation. It's not and it doesn't. It's much simpler than that.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582287953035266
+<br>
+Text: Another notation for the same thing is that S'(x) = f'(x) + f'(x + 1) + f'(x + 2) + … may well converge for all x, even if S(x) itself doesn't.
+
+This derivative tells us a lot! Integrating its derivative tells us everything about what S should be, except for an unknown +C term.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582286975762432
+<br>
+Text: Let's give this a nice name as a function: S(x) = f(x) + f(x + 1) + f(x + 2) + ….
+
+And note that S(a) - S(b) should be [f(a) - f(b)] + [f(a + 1) - f(b + 1)] + [f(a + 2) - f(b + 2)] + …, which may converge even if neither S(a) nor S(b) converge in themselves.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582285914714113
+<br>
+Text: Well, let's consider a more general problem. Things are often simpler in greater abstraction, at least to my mindset. Suppose you want to make sense of f(x) + f(x + 1) + f(x + 2) + … in general, even though this may not converge. What can you do?
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582291216125952
+<br>
+Text: In other words, so long as some number of differentiations makes it converge, we know what f(x) + f(x + 1) + f(x + 2) + … should be, up to a polynomial term.
+
+But how do we figure out what the +Cs in the integrations should be taken to be?
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582289031061504
+<br>
+Text: In the same way, we could take 2nd or higher derivatives. So even if the first derivative doesn't make it converge, so long as SOME higher derivative converges, we can recover f(x) + f(x + 1) + f(x + 2) + … by repeated integration, once we know which +Cs to pick at each step.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582295679053827
+<br>
+Text: [Technically, it sums to -G(b) + G(b + ∞) in a limiting sense, but if it were true that G(x) + G(x + 1) + G(x + 2) + … converged, then it would have to be true that G approaches 0 in the limit anyway.]
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582294525620224
+<br>
+Text: This would be [G(b + 1) - G(b)] + [G(b + 2) - G(b + 1)] + [G(b + 3) - G(b + 2)] + …, where G is the (n - 1)-th derivative of f. And this last series basically cancels out to just -G(b).
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582293044961280
+<br>
+Text: Well, let's make one more observation about the average values of these functions: Suppose g is the n-th derivative of f. What is the average value of g on an arbitrary unit interval [b, b + 1]? I.e., what should the integral of g from b to b + 1 be?
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582300733079553
+<br>
+Text: One subtlety is that, in the last integration to get f(x) + f(x + 1) + f(x + 2) + …, this will require us to evaluate the -1-th derivative of f; that is, we can only carry out this technique after we've already settled on a choice of antiderivative for f itself. But that's fine.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582299701280770
+<br>
+Text: choosing the +C at each stage so that each n-th derivative series is given an average value on any unit interval [b, b + 1] of -(the (n - 1)-th derivative of f at b).
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582297327386629
+<br>
+Text: So there you have it. To figure out what f(x) + f(x + 1) + f(x + 2) + … should be, differentiate enough times that you get a straightforward convergent series, then integrate back up,
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582305560821766
+<br>
+Text: Coming back now to the Riemann zeta function, we originally wanted to evaluate 1^p + 2^p + 3^p + ….
+
+So let f(x) = x^p.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582304507990016
+<br>
+Text: What our above reasoning implicitly shows is that our technique for defining F'(x) + F'(x + 1) + F'(x + 2) + … gives the unique pseudopolynomial function whose average value on each [b, b + 1] is -F(b) [with this existing if and only if F itself is pseudopolynomial].
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582303585288194
+<br>
+Text: More generally, let us say a function is "pseudopolynomial" if it or some higher derivative of it approaches 0 as its inputs get large.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582301710462977
+<br>
+Text: Our technique will give the standard answer for f(x) + f(x + 1) + f(x + 2) + … whenever this series converges and the antiderivative F of f is chosen with asymptotic value F(+∞) = 0.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582308811354113
+<br>
+Text: In this way, we can evaluate x^p + (x + 1)^p + (x + 2)^p + … for general p [this is called the Hurwitz zeta function, ζ(-p, x)] and by using the specific value x = 1, we get the Riemann zeta function.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582307746037760
+<br>
+Text: Having done so, we can use the technique above. Sufficiently many differentiations will indeed make this into something convergent, since each differentiation brings the power down by 1 and we get convergence once the real component of the power is &lt; -1.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582306521255937
+<br>
+Text: Now we need to pick an antiderivative for f. Specifically, an antiderivative which approaches 0 when f(x) + f(x + 1) + f(x + 2) + … is already convergent and that extends this in a clean pattern more generally. The natural choice is to use the antiderivative x^(p + 1)/(p + 1).
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582313504845825
+<br>
+Text: For example, the question is often posed of how to generalize the factorial to non-integer arguments.
+
+Well, the defining property of the factorial is that x! = x * (x - 1)!. In other words, log(x!) = log(x) + log((x - 1)!).
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582312619778057
+<br>
+Text: We can use this technique to generalize other recurrences too.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582311340556289
+<br>
+Text: That's it. It's that simple. This defines the zeta function on arbitrary inputs. No need to think about meromorphic continuation. Just differentiation till you hit convergence, and integration back up with the right choice of constants to get the right average values.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582309897732097
+<br>
+Text: Well, there's one hitch: when p = -1, our antiderivative x^(p + 1)/(p + 1) involves a division by zero. And this is why the zeta function has a pole at the power -1 (i.e., at the harmonic series).
+
+At every other power, everything works out smoothly, to some finite number.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582959494770688
+<br>
+Text: Note that, with two differentiations, log(x) turns into 1/x^2, which does indeed have the property that 1/x^2 + 1/(x + 1)^2 + 1/(x + 2)^2 + … converges. [Note also that this is just another instance of the Hurwitz zeta function!]
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582958563561473
+<br>
+Text: In other words, the average value of the derivative of the logarithm of the factorial on any unit interval [x - 1, x] should be log(x).
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582962489393153
+<br>
+Text: That's it from me for now. Twitter was the wrong medium for this, and in particular, my Twitter audience was the wrong audience for this, but I decided to write it up anyway.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582961642180608
+<br>
+Text: For what it's worth, this generalized factorial is what people often call the "gamma function", but this different name (and also the slight re-indexing people use for it) is a dumb hidebound thing that you need pay no attention to. Just call it the factorial like usual.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250582960463581185
+<br>
+Text: So our technique will find the unique pseudopolynomial fit to be the derivative of the logarithmic factorial. Given this and the starting value 0! = 1, we've defined the factorial itself, now generalized to arbitrary inputs. And we even see its relation to the zeta functions!
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250585151995875328
+<br>
+Text: @rockanrollphoto That was math.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250586856279982080
+<br>
+Text: @tacomonstrous https://t.co/JguOjcRdV3
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250591693449150465
+<br>
+Text: @gay_nick_ Is the behavior you are referring to that sufficiently many differentiations makes f(x) + f(x + 1) + f(x + 2) + … converge? This turns out to be essentially equivalent to some derivative of f approaching zero as its inputs grow large*.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250591718178803715
+<br>
+Text: @gay_nick_ [*: Or rather, pedantically, to some repeated derivatives' repeated integral over any fixed size interval approaching zero as the interval's values grow large].
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250591762906742784
+<br>
+Text: @gay_nick_ This is what I called the "pseudopolynomiality" of f earlier. I don't know a standard term for it, but there are certainly examples other than polynomials, like the examples given above (e.g., x^p where the power is something other than a natural number, or log(x)).
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250607891876364288
+<br>
+Text: @BowToChris It yields the same result, but you can understand this without having to think or even know about analytic continuation. And indeed, this gives a lot more direct information about how to compute and reason about the zeta function than appealing to black box analytic continuation.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250622266255314946
+<br>
+Text: Minor typo: The second derivative of log(x) is actually -1/x^2.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250623483899412480
+<br>
+Text: @ModelOfTheory Fuck, you're correct, but I can't delete, edit, and repost this one post without deleting and reposting all the replies.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250623661092061185
+<br>
+Text: RT @RadishHarmers: I'm a single issue voter. I issued my vote years ago. I will not be doing so again.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250623754675326976
+<br>
+Text: RT @RadishHarmers: Of course Trump is putting his name on the checks. You younger folks may not remember, but a check isn't valid unless it…
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250633527340732419
+<br>
+Text: I aged directly from 19 to 21. It caused so much trouble at the time, so much pain in my life, but I had just finally made my peace with it, till now.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250639940993593344
+<br>
+Text: RT @RadishHarmers: This is no time to quibble about the aesthetics. We've seen significantly lower transmission in Asian countries where fa…
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250640630717571073
+<br>
+Text: Scientists used to believe diamonds were the hardest material on Earth, but then they discovered double black diamonds.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250642209801670657
+<br>
+Text: @IHateNYT Let them shutter their doors forever. I am doing my part to enforce quarantine.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250642373828280321
+<br>
+Text: If you had one eye an inch higher than the other, you'd be widely held irredeemably ugly, undeserving of love, and yet folks jack off to The Simpsons and aliens and shit.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250642859943956481
+<br>
+Text: Spoonerizing "pleonasmic encomium" into "neoplasmic meconium", I deliver the sickest burn in Oxford Union history. Open weeping can be heard. After two storied centuries, the society shutters its doors, a bittersweet note explaining "There are no worlds left to conquer…".
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250649549942775816
+<br>
+Text: I firmly agree with the ideals of the Revolution. I don't believe the French peasantry should have been allowed to eat cake.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250655413760032769
+<br>
+Text: @matias_kaplan https://t.co/vByJSy6cSm
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250669592139173890
+<br>
+Text: Louis CK's fanbase consists entirely of women now. They are the only ones who can still listen to his comedy without being cancelled.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250669967793688576
+<br>
+Text: @foolinthelotus https://t.co/OR9WOLNQtf
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250670349848584192
+<br>
+Text: @foolinthelotus Welcome to the cool club.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250671498576179200
+<br>
+Text: RT @RadishHarmers: It was their inability to solve the German tank problem which ultimately lost World War II for the Germans. They had no…
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250672851331485697
+<br>
+Text: Close enough. https://t.co/pcFMUEM2OW
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250682496905330688
+<br>
+Text: @CinematicZodiac Read the clearly posted sign.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250700009127006210
+<br>
+Text: @Discourse_Stu It's just a precaution and it won't matter as long as you don't get a girlfriend.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250704664452087808
+<br>
+Text: This isn't nearly true. This is just something 22 year olds say because everything before they were born feels retro history, and stuff after they hit middle school they can remember actively partaking in. Yeah, nobody listened to or watched or did anything when I was 5 either. https://t.co/RofyG46fac
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250704893771493376
+<br>
+Text: That plus the 2000s qua decade never got a snappy name. "Oughties" and all that never took off. That's all.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250708274938351616
+<br>
+Text: @Quixoticmatter Every decade is just more of the previous, a bit shifted. It's mostly the same people around, picking up right where they left off.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250710415887282177
+<br>
+Text: @breuxneugh Sitting around bored in the dentist's waiting room.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250716262298238976
+<br>
+Text: https://t.co/XBNUnY1xcj https://t.co/q0xmusPdoU
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250719354842472449
+<br>
+Text: @Langerhans_isle Buddy, I was the 20 year old saying the 80s were a cultural void in the early 2000s. I was there. https://t.co/2okwEio9co
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250813578564833280
+<br>
+Text: @Langerhans_isle @LVKEBVSSEY The 2020s only just barely began. Give it a minute.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250815061351976962
+<br>
+Text: @foolinthelotus I agree. I am simply showing off my familiarity with the foreshadowing of your oeuvre.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250862520216293377
+<br>
+Text: Glad to hear directly from the campaign that they will be not just talk, but action. https://t.co/0bfo2NKqMl
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250863049357099009
+<br>
+Text: Not just talk but action, in action. https://t.co/5LcdgsGYJc
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250864442318950401
+<br>
+Text: RT @RadishHarmers: Everyone talks about the Riemann zeta function like it's tricky to construct and requires thinking about the sophisticat…
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250866332654075905
+<br>
+Text: @joe_moviegoer You still have convergence in the same cases [define g(x) as f(Tx), and then observe that g(x/T) + g(x/T + 1) + g(x/T + 2) = f(x) + f(x + T) + f(x + 2T)…, with analogous equations on the higher derivative series up to a multiplicative constant].
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250867671597531138
+<br>
+Text: @joe_moviegoer For the zeta functions in particular, note that (Tx)^p = T^p x^p, so the result is just a simple reparametrization and rescaling. That is, x^p + (x + T)^p + (x + 2T)^p + … = T^p ( (x/T)^p + (x/T + 1)^p + (x/T + 2)^p + …) = T^p ζ(-p, x/T).
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250871445380640770
+<br>
+Text: @wokeberia No. b through b + 1 here are not inputs to the Riemann zeta function; they do not serve as values for p in 1^p + 2^p + 3^p + …. They serve as values of x in S(x) = x^p + (x + 1)^p + (x + 2)^p + ….
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250871474740740098
+<br>
+Text: @wokeberia And we are talking about a situation where we already know what S(x) is everywhere up to a constant, and are now trying to determine the value of that constant using the also known value of the integral of S(x) dx as x runs from b to b + 1.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250871590847418373
+<br>
+Text: @wokeberia This is a completely different idea than extending the zeta function to general p by using analyticity. For one thing, I've not even mentioned the concept of being differentiable or analytic with respect to the argument p.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250871766219661312
+<br>
+Text: @wokeberia You can run this argument without ever thinking about analyticity with respect to p, much less knowing about uniqueness of analytic continuation.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250872747632349187
+<br>
+Text: @wokeberia Another way to see this is different from analytic continuation is that this technique also immediately gave us the gamma function as the unique "pseudopolynomial" solution to its recurrence relation, something difficult to derive as a matter of unique analytic continuation.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250873047265038336
+<br>
+Text: @wokeberia That said, the result is indeed the same result you would get from analytic continuation, as it must be.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250873075807203329
+<br>
+Text: @wokeberia And this can be explained by the fact that the result is complex-differentiable with respect to p, with derivative log(x) * x^p + log(x + 1) * (x + 1)^p + log(x + 2) * (x + 2)^p + …, which again can be summed for general p by the same technique.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250885853423046661
+<br>
+Text: @nachdermas If you don't tell anyone, you get to keep it.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250889536365879310
+<br>
+Text: @JimfromBC https://t.co/pngC42g2az
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250889745808449550
+<br>
+Text: @JimfromBC (I'm aware the case this is in response to is much less wealth than a billionaire, but same logic applies)
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250892727585329154
+<br>
+Text: @allahliker Out of curiosity, as I've heard you say this often, on what issues do you feel your politics departs from "leftist" and aligns with "liberal" instead?
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250903645484433410
+<br>
+Text: I've got some primo personal laments and me-focused insecurities lined up for after all this global pandemic talk dies down.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250903856571088902
+<br>
+Text: Personally, I would not post about losing $700k. If you lose $700k but no one finds out, you get to keep it.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250909019864215556
+<br>
+Text: @RiderToast I am honor-bound on pain of hypocrisy to allow this, this once. https://t.co/bIlQhTgNEi
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250913972972326913
+<br>
+Text: RT @DrRJKavanagh: NYPD officers harassed an apparently homeless man on 49th St and 8th Ave in Manhattan last night, shouting at him through…
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250930877431009281
+<br>
+Text: @nuggy5 @LucreSnooker Over the last couple years, I have climbed to this C-list peak. How's life been in the fifteen years since college?
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250932895679762433
+<br>
+Text: @nuggy5 I'm alright. Went to California for twelve years, now I'm New York, but my life is pretty boring wherever I am. Everything's good but nothing interesting. Say hi to Jigar from me next time you do see him.
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+<p>
+Id: 1250935256489824257
+<br>
+Text: RT @RadishHarmers: Close enough. https://t.co/pcFMUEM2OW
+<br>
+Created at: 2020-4-16
+<br>
+----
+</p>
+</head>
+</html>
