@@ -26,6 +26,8 @@ dependencies:
 - bytestring
 - utf8-string
 - attoparsec
+- directory
+- filepath
 
 library:
   source-dirs: src
