@@ -2,10 +2,13 @@
   The RadishHarmers tweet archive.
 </head>
 
-<body>
-  <ul>
-    {% for url in site.static_files %}
-    <li><a href="{{ site.baseurl | escape }}{{ url.path | escape }}">{{ url.path | escape }}</a> </li>
-    {% endfor %}
-  </ul>
-</body>
+For now, just try going to something like https://sridharramesh.github.io/RadishHarmers/archive/2021/4/22.html.
+
+TODO:
+Add proper indexing.
+Make things less ugly.
+Show Like and RT counts.
+Differentiate RTs from original tweets.
+Anchor elements to allow linking to individual tweets.
+Display quote tweets, replies, and threads with links or embeddings back to other tweets on this page or to Twitter.
+Show embedded media (images and videos).
