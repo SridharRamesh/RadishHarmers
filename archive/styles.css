@@ -12,6 +12,7 @@ blockquote.twitter-tweet {
   margin: 10px 5px;
   padding: 0 16px 16px 16px;
   max-width: 468px;
+  overflow-wrap: break-word;
 }
 
 blockquote.twitter-tweet p {
