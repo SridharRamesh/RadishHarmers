@@ -1,8 +1,6 @@
-<head>
-  The RadishHarmers tweet archive.
-</head>
+The RadishHarmers tweet archive.
 
-For now, just try going to something like https://sridharramesh.github.io/RadishHarmers/archive/2021/4/22.html.
+For now, just try going to something like [https://sridharramesh.github.io/RadishHarmers/archive/2020/6/24.html].
 
 TODO:
 Add proper indexing.
