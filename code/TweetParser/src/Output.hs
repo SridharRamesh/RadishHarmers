@@ -2,6 +2,7 @@
 module Output(makePage) where
 
 import Prelude hiding (unlines, show)
+import Constants
 import qualified Prelude
 import Parse
 import Data.Text.Lazy as Text
@@ -79,12 +80,17 @@ makePage :: Date -> [Tweet] -> Text
 makePage date tweets = 
   pageHeader
   <>
-  "These are all the tweets and RTs that I made on "
+  "These are all the tweets and replies that I made on "
   <>
   dateToText date
   <>
   horizontalRule
   <>
-  mconcat [makeTweet tweet | tweet <- tweets]
+  mconcat [makeTweet tweet | tweet <- tweets, not (isSelfRT tweet), not (isRT tweet)]
   <>
   pageFooter
+
+isSelfRT tweet = (Data.String.fromString ("RT @" <> atName) :: StrictText.Text) `StrictText.isPrefixOf` (full_text tweet)
+isRT tweet = (Data.String.fromString ("RT @") :: StrictText.Text) `StrictText.isPrefixOf` (full_text tweet)
+isReply tweet = (Data.String.fromString ("@") :: StrictText.Text) `StrictText.isPrefixOf` (full_text tweet)
+-- Should detect self-replies; i.e., threads. Should also perhaps detect forward on threads.
