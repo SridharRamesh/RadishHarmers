@@ -24,6 +24,11 @@ timestampToText Timestamp{..} =
     <> " "
     <> (show hour) <> ":" <> (show minute) <> ":" <> (show second)
 
+-- Taken from https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/css-for-embedded-tweets
+-- Along with the corresponding CSS stylesheet.
+blockquoteStart = "<blockquote class=\"twitter-tweet\" data-lang=\"en\"><p lang=\"en\" dir=\"ltr\">"
+blockquoteEnd = "</p></blockquote>"
+
 makeTweet :: Tweet -> Text
 makeTweet Tweet{..} = paragraph $ intercalate lineBreak
   ["<pre>" <> (toLazyText $ HTMLEntities.Builder.text full_text) <> "</pre>",
@@ -36,11 +41,14 @@ pageHeader = unlines
   ["<html>", 
    "<head>",
    "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">",
-   "<!-- This page was generated from TweetParser. -->"
+   "<!-- This page was generated from TweetParser. -->",
+   "<link rel=\"stylesheet\" href=\"../../../styles.css\">",
+   "</head>",
+   "<body>"
   ]
 
 pageFooter = unlines
-  ["</head>",
+  ["</body>",
    "</html>"
   ]
 
