@@ -11,7 +11,7 @@ import qualified Data.String
 import Data.Text.Lazy.Builder as Text.Builder
 import Data.Maybe
 
--- Should probably be doing everything in builder's and converting to Text just at the end.
+-- Should probably be doing everything in Builders and converting to Text just at the end.
 -- Such a mess figuring out these different formats and what to use.
 
 show x = Data.String.fromString $ Prelude.show x
@@ -92,5 +92,6 @@ makePage date tweets =
 
 isSelfRT tweet = (Data.String.fromString ("RT @" <> atName) :: StrictText.Text) `StrictText.isPrefixOf` (full_text tweet)
 isRT tweet = (Data.String.fromString ("RT @") :: StrictText.Text) `StrictText.isPrefixOf` (full_text tweet)
-isReply tweet = (Data.String.fromString ("@") :: StrictText.Text) `StrictText.isPrefixOf` (full_text tweet)
+isReply tweet = case in_reply_to_status_id tweet of Nothing -> False; Just _ -> True
 -- Should detect self-replies; i.e., threads. Should also perhaps detect forward on threads.
+containsMultiSpace tweet = (Data.String.fromString ("  ") :: StrictText.Text) `StrictText.isInfixOf` (full_text tweet)
