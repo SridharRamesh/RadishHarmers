@@ -32,6 +32,10 @@ dependencies:
 
 library:
   source-dirs: src
+  # To prevent warning noted at https://github.com/commercialhaskell/stack/issues/5439
+  when:
+  - condition: false
+    other-modules: Paths_TweetParser
 
 executables:
   TweetParser-exe:

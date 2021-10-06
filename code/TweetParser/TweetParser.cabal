@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 8b8012c7d25bb1d05a1032239fb5b9b36c0aae4fe16828fad9ee49dbc18b7798
+-- hash: 1bed020c01b1649dd2c120d0a6d78312d4508469f26bd37177792534bcac176a
 
 name:           TweetParser
 version:        0.1.0.0
@@ -30,8 +30,6 @@ library
       Constants
       Output
       Parse
-  other-modules:
-      Paths_TweetParser
   hs-source-dirs:
       src
   build-depends:
