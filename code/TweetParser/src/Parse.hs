@@ -130,6 +130,4 @@ extractTweets bytes = case (fromJSON bytes) of
   Success (FileTop boxedTweets) -> Success (map tweet boxedTweets)
   Error error -> Error error -- Re-exporting the error at a different type
 
-preludeParser = LazyStringParse.string "window.YTD.tweet.part0 = "
-fileParser = preludeParser >> json
-fileParse = LazyStringParse.parse fileParser
+fileParse = LazyStringParse.parse json
