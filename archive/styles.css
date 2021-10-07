@@ -32,3 +32,15 @@ blockquote.twitter-tweet a:hover,
 blockquote.twitter-tweet a:focus {
   text-decoration: underline;
 }
+
+.grey-text {
+  color: grey;
+}
+
+img.icon {
+  vertical-align:text-bottom;
+}
+
+img.avi {
+  vertical-align:middle;
+}

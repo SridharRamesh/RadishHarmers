@@ -40,7 +40,8 @@ main = do
           let orderedTweets = sortBy (compare `on` created_at) tweets
               groupedTweets = groupBy ((==) `on` (date . created_at)) orderedTweets
               datesAndTweets = [(date $ created_at $ head tweets, tweets) | tweets <- groupedTweets]
-              datesAndHTML = [(date, makePage date tweets) | (date, tweets) <- datesAndTweets]
+              datesAndHTML = [(date, makePage date tweets) | (date@Date{..}, tweets) <- datesAndTweets, 
+                              printForDate year month dayOfMonth]
           in do mapM (uncurry writePage) datesAndHTML
                 putStrLn $ "All done!"
 
