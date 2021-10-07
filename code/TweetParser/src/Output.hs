@@ -17,7 +17,8 @@ import Data.Maybe
 show x = Data.String.fromString $ Prelude.show x
 
 lineBreak = "\n<br>\n"
-paragraph x = "<p>\n" <> x <> "\n</p>\n"
+paragraph Nothing x = "<p>\n" <> x <> "\n</p>\n"
+paragraph (Just anchor) x = "<p id=\"" <> anchor <> "\"\n" <> x <> "\n</p>\n"
 horizontalRule = "\n<hr>\n"
 
 dateToText :: Date -> Text
@@ -54,7 +55,7 @@ htmlCharMap =
 htmlSanitize text = toLazyText $ StrictText.foldr (\c b -> htmlSanitizeChar c <> b) mempty text
 
 makeTweet :: Tweet -> Text
-makeTweet Tweet{..} = paragraph $ intercalate lineBreak
+makeTweet Tweet{..} = paragraph (Just $ fromStrict id) $ intercalate lineBreak
   [blockquoteStart <> htmlSanitize full_text <> blockquoteEnd,
    "Timestamp: " <> timestampToText created_at,
    "Id: " <> fromStrict id,
