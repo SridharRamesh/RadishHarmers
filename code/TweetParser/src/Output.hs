@@ -18,7 +18,7 @@ show x = Data.String.fromString $ Prelude.show x
 
 lineBreak = "\n<br>\n"
 paragraph Nothing x = "<p>\n" <> x <> "\n</p>\n"
-paragraph (Just anchor) x = "<p id=\"" <> anchor <> "\"\n" <> x <> "\n</p>\n"
+paragraph (Just anchor) x = "<p id=\"" <> anchor <> "\">\n" <> x <> "\n</p>\n"
 horizontalRule = "\n<hr>\n"
 
 dateToText :: Date -> Text
