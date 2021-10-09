@@ -33,14 +33,33 @@ blockquote.twitter-tweet a:focus {
   text-decoration: underline;
 }
 
-.grey-text {
+span.Retweet::before {
+  content: "🔁"
+}
+
+span.Like::before {
+  content: "❤️"
+}
+
+span.Like {
+  margin-left: 20px;
+}
+
+span.display-name {
+  font-weight: bold;
+}
+
+span.at-name {
   color: grey;
 }
 
-img.icon {
-  vertical-align:text-bottom;
+span.timestamp {
+  color: grey;
 }
 
 img.avi {
-  vertical-align:middle;
+  border-radius: 50%;
+  max-height: 50px;
+  max-width: 50px;
+  float: left;
 }

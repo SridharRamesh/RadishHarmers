@@ -1,451 +1,1930 @@
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!-- This page was generated from TweetParser. -->
-<link rel="stylesheet" href="../../styles.css">
-</head>
-<body>
-These are all the tweets and replies that I made on 2021-8-15
-<hr>
-<p id="1426698449081282566">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe For what it&#39;s worth, I believe the answer should be π/e * erfi(1) [i.e., 2 sqrt(π)/e * the integral from 0 to 1 of e^(t^2) dt], but the erfi(1) is becoming -i for some reason. I get a similar issue with Wolfram Alpha by taking the Laplace Transform of t^(-1/2) * e^(-t)/(1 - t).</p></blockquote>
-<br>
-Timestamp: 2021-8-15 0:13:11
-<br>
-Id: 1426698449081282566
-<br>
-
-<hr>
-
-</p>
-<p id="1426705782997929986">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe Even more simply, with the Laplace transform of 1/(t^(1/2) - t^(-1/2)), which is the crux of the previous thing, of course. Incidentally, Wolfram Alpha gives me nondeterministic results on these, which is annoying. Also, I have got to start using WolframScript.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 0:42:20
-<br>
-Id: 1426705782997929986
-<br>
-
-<hr>
-
-</p>
-<p id="1426737584370225152">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe In more detail, let f(x) = e^(-x^2) and let g(x) = f(x - 1) - f(x + 1). Our integrand is g(x)/x. Note that f is even, and therefore g is odd, and therefore our integrand is even. So instead of integrating from 0 to +∞, we can just as well take half the integral from -∞ to +∞.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 2:48:42
-<br>
-Id: 1426737584370225152
-<br>
-
-<hr>
-
-</p>
-<p id="1426737643157606402">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe Integrating from -∞ to +∞ is the same as taking the* Fourier transform at 0, so let&#39;s investigate the Fourier transforms here.<br><br>[*: We&#39;ll use the Fourier transform whose kernel of integration is e^(i x t)]</p></blockquote>
-<br>
-Timestamp: 2021-8-15 2:48:56
-<br>
-Id: 1426737643157606402
-<br>
-
-<hr>
-
-</p>
-<p id="1426737679325085696">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe The Fourier transform of the Gaussian f(x) = e^(-x^2) is famously just a minor reparametrization of itself. On our Fourier transform convention, it specifically comes out to F(t) = sqrt(π) e^(-t^2/4).</p></blockquote>
-<br>
-Timestamp: 2021-8-15 2:49:4
-<br>
-Id: 1426737679325085696
-<br>
-
-<hr>
-
-</p>
-<p id="1426737711780597762">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe Furthermore, the Fourier transform of f(x - 1) is e^(it) F(t), and the Fourier transform of f(x + 1) is symmetrically e^(-it) F(t). Combining these, we get that the Fourier transform of g(x) is G(t) = (e^(it) - e^(-it)) F(t) = sqrt(π) (e^(it) - e^(-it)) e^(-t^2/4).</p></blockquote>
-<br>
-Timestamp: 2021-8-15 2:49:12
-<br>
-Id: 1426737711780597762
-<br>
-
-<hr>
-
-</p>
-<p id="1426737880114794496">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe The Fourier transform of g(x)/x, then, will be an integral of G(t) i, which is to say, an integral of i sqrt(π) (e^(it) - e^(-it)) e^(-t^2/4).<br><br>Which integral? Well, our g(x)/x has been chosen to be continuous even at 0, so its Fourier transform has to decay to zero at infinity.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 2:49:52
-<br>
-Id: 1426737880114794496
-<br>
-
-<hr>
-
-</p>
-<p id="1426738041901756424">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe Alright, let us integrate e^(it) e^(-t^2/4) = e^((1 + it/2)^2 - 1). If we use R(t) to stand for the odd antiderivative of the even function e^(t^2) [the one chosen such that R(0) = 0], then this result is clearly 2/i e^(-1) R(1 + it/2) + C.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 2:50:31
-<br>
-Id: 1426738041901756424
-<br>
-
-<hr>
-
-</p>
-<p id="1426738193571983360">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe Symmetrically, the integral of e^(-it) e^(-t^2/4) is -2/i e^(-1) R(1 - it/2) + C, and so overall, the integral of G(t) i is 2 sqrt(π) e^(-1) [R(1 + it/2) - R(1 - it/2)] + C.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 2:51:7
-<br>
-Id: 1426738193571983360
-<br>
-
-<hr>
-
-</p>
-<p id="1426738399197663240">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe We wanted to choose the constant of integration such that this decays to zero at infinity, and a bit of investigation into the nature of R shows that setting C to zero will accomplish this.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 2:51:56
-<br>
-Id: 1426738399197663240
-<br>
-
-<hr>
-
-</p>
-<p id="1426738466742804481">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe Phew. Summing this all up, the Fourier transform of our even integrand g(x)/x is 2 sqrt(π) e^(-1) [R(1 + it/2) - R(1 - it/2)], and therefore the integral 0 to +∞ of that integrand is 2 sqrt(π)/e R(1) = 2 sqrt(π)/e times the integral from 0 to 1 of e^(t^2).<br><br>The End.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 2:52:12
-<br>
-Id: 1426738466742804481
-<br>
-
-<hr>
-
-</p>
-<p id="1426738606329278466">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe If there are any typos in the above, I will not correct them. I am only human, not a miracle worker. I cannot type detailed math to perfection on Twitter, the world&#39;s worst platform.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 2:52:45
-<br>
-Id: 1426738606329278466
-<br>
-
-<hr>
-
-</p>
-<p id="1426767423265546241">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Basically, life is like this. There&#39;s not enough time during the week to do chores, so you have to do them on the weekend.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 4:47:16
-<br>
-Id: 1426767423265546241
-<br>
-
-<hr>
-
-</p>
-<p id="1426769881274404869">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We should ban jokes and music. https://t.co/xU4g52VpcH</p></blockquote>
-<br>
-Timestamp: 2021-8-15 4:57:2
-<br>
-Id: 1426769881274404869
-<br>
-
-<hr>
-
-</p>
-<p id="1426779837667102725">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">For the record, it was this. However, when people delete their tweets, I consider that to end the matter. She recognized it was dumb, and that&#39;s that. Hopefully she decides to go yell at her boss&#39;s boss, Obama, instead of some random benign nobody for the war now. https://t.co/aWoUUdv2Jz</p></blockquote>
-<br>
-Timestamp: 2021-8-15 5:36:36
-<br>
-Id: 1426779837667102725
-<br>
-
-<hr>
-
-</p>
-<p id="1426781428382064640">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe What were you trying to compute that led you to this?</p></blockquote>
-<br>
-Timestamp: 2021-8-15 5:42:55
-<br>
-Id: 1426781428382064640
-<br>
-
-<hr>
-
-</p>
-<p id="1426786291346251778">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Doctors have only one job to do (cure things) and yet they rarely do it.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 6:2:14
-<br>
-Id: 1426786291346251778
-<br>
-
-<hr>
-
-</p>
-<p id="1426793483046723590">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe I had been thinking maybe this had come from a probabilistic setup, given the Gaussians, but actually, it&#39;s a bit tricky to find a direct probabilistic interpretation, given the two terms that do not converge separately.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 6:30:49
-<br>
-Id: 1426793483046723590
-<br>
-
-<hr>
-
-</p>
-<p id="1426805783069708293">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Nothing wrong with math. It is music which sucks. https://t.co/v4i11TRWqw</p></blockquote>
-<br>
-Timestamp: 2021-8-15 7:19:42
-<br>
-Id: 1426805783069708293
-<br>
-
-<hr>
-
-</p>
-<p id="1426812543012573189">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@pradnelluru An abrupt withdrawal is the right thing to do, as every slow promise of withdrawal has resulted in this, twenty years going by, never in the end withdrawing, and accomplishing nothing but the misery of occupation all the while.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 7:46:33
-<br>
-Id: 1426812543012573189
-<br>
-
-<hr>
-
-</p>
-<p id="1426813542829854727">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@molemancoyote I used to work for 3blue1brown. Grant does a good job. Most math YouTube content, or most pop math in general, irks me in various ways. I might like to get back into the game myself at some point, but I talk a big game and never follow through.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 7:50:32
-<br>
-Id: 1426813542829854727
-<br>
-
-<hr>
-
-</p>
-<p id="1426935078874144783">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@BlueSunSystems I am the antiwar movement at home.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 15:53:28
-<br>
-Id: 1426935078874144783
-<br>
-
-<hr>
-
-</p>
-<p id="1426936776292175889">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@alexselby1770 @sigfpe Oh, very nice.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 16:0:13
-<br>
-Id: 1426936776292175889
-<br>
-
-<hr>
-
-</p>
-<p id="1426947147639951368">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@alexselby1770 @sigfpe Wolfram Alpha/Mathematica, what are you doing? https://t.co/fTLS0HtESa</p></blockquote>
-<br>
-Timestamp: 2021-8-15 16:41:26
-<br>
-Id: 1426947147639951368
-<br>
-
-<hr>
-
-</p>
-<p id="1426951747839401990">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@wzey9 @alexselby1770 @sigfpe You can do that, resulting in a multiple of the square root of negative one, but it&#39;s not the correct answer for this integral.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 16:59:42
-<br>
-Id: 1426951747839401990
-<br>
-
-<hr>
-
-</p>
-<p id="1426954849971810306">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@wzey9 @alexselby1770 @sigfpe No one is saying the logarithm of a negative value would be a positive rational number. It can be taken to be an imaginary number. The base of the log here is e, incidentally. Famously, e^(i π) = -1. This is a way of talking about the dynamics of rotation. See Euler&#39;s theorem.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 17:12:2
-<br>
-Id: 1426954849971810306
-<br>
-
-<hr>
-
-</p>
-<p id="1426956352862265349">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 I&#39;m trying to figure out exactly what the core mistake it&#39;s making is. It looks like it thinks this is true. But why?<br><br>What are the superficial fake poles you are referring to? https://t.co/JBFHokfzMy</p></blockquote>
-<br>
-Timestamp: 2021-8-15 17:18:0
-<br>
-Id: 1426956352862265349
-<br>
-
-<hr>
-
-</p>
-<p id="1426962143463813131">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 Hm, combining these two, we can see where this third comes from. Now to think about what went awry in the first two. https://t.co/TENY2gDhvW</p></blockquote>
-<br>
-Timestamp: 2021-8-15 17:41:1
-<br>
-Id: 1426962143463813131
-<br>
-
-<hr>
-
-</p>
-<p id="1426969139088855048">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 I think what&#39;s happening here is two-fold, with the two parts acting oppositely:<br><br>The sqrt(a^2) terms are being turned into |a| but should be a in one expression and -a in another, I believe.<br><br>On the other hand, the log(...) terms should actually be log(|...|) terms, I believe.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 18:8:49
-<br>
-Id: 1426969139088855048
-<br>
-
-<hr>
-
-</p>
-<p id="1426970071033909253">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 The first of these mistakes causes the term that shouldn&#39;t cancel out to cancel out.<br><br>The second of these mistakes causes a term that should cancel out to not cancel out.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 18:12:31
-<br>
-Id: 1426970071033909253
-<br>
-
-<hr>
-
-</p>
-<p id="1426971440767700992">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 The log(...) vs log(|...|) mistake is probably from an integration of 1/... somewhere. These log terms should just have died off even within the separate half-line integrals, but because of the branch cut choices were left in.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 18:17:57
-<br>
-Id: 1426971440767700992
-<br>
-
-<hr>
-
-</p>
-<p id="1426972486378393609">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 Maybe framing it as &quot;It should have been log(|...|)&quot; isn&#39;t the best way to put it either, but the point is that those log terms should have cancelled out except for mistaken differences in branch cut choices.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 18:22:7
-<br>
-Id: 1426972486378393609
-<br>
-
-<hr>
-
-</p>
-<p id="1426972685431681024">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 With all this corrected, the answer would have been π erfi(a/2), which is correct.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 18:22:54
-<br>
-Id: 1426972685431681024
-<br>
-
-<hr>
-
-</p>
-<p id="1426977903317864456">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 These expressions would&#39;ve been slightly cleaner if I&#39;d stuck with exp(2ax) instead of exp(ax), oh well.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 18:43:38
-<br>
-Id: 1426977903317864456
-<br>
-
-<hr>
-
-</p>
-<p id="1426989362647080972">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@Sturgeons_Law @SomeStingray @SandalBurn What do you mean by thinking of physical spaces in geometrical terms? Is that not the normal way people think of physical spaces?</p></blockquote>
-<br>
-Timestamp: 2021-8-15 19:29:10
-<br>
-Id: 1426989362647080972
-<br>
-
-<hr>
-
-</p>
-<p id="1427036665768550402">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 I can sometimes get it to forget the hypergeometric component entirely. But it&#39;s nondeterministic in this regard. Annoying. https://t.co/cJTq7igrdg</p></blockquote>
-<br>
-Timestamp: 2021-8-15 22:37:8
-<br>
-Id: 1427036665768550402
-<br>
-
-<hr>
-
-</p>
-<p id="1427040611408961541">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 Yup, different results for exactly the same input. One wrong, one right.<br><br>Here, I just did it again, literally just hitting refresh. [This time, both results have the branch cut interpretation issues, but the hypergeometric term missing the first time is an even worse mistake.] https://t.co/FkK6JPQeEI</p></blockquote>
-<br>
-Timestamp: 2021-8-15 22:52:49
-<br>
-Id: 1427040611408961541
-<br>
-
-<hr>
-
-</p>
-<p id="1427041225572601856">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 I&#39;d always had the same annoyance with Wolfram Alpha as you. But this non-determinism has finally convinced me to install Wolfram Script, Wolfram Engine, etc. But I&#39;ve also discovered Wolfram Cloud Notebooks, so maybe I didn&#39;t need to waste space on those installations. Oh well.</p></blockquote>
-<br>
-Timestamp: 2021-8-15 22:55:15
-<br>
-Id: 1427041225572601856
-<br>
-
-<hr>
-
-</p>
-<p id="1427041461565075466">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 Yeah, it was me, over here. Note the followup specifically about this. https://t.co/OG4q9Ds435</p></blockquote>
-<br>
-Timestamp: 2021-8-15 22:56:12
-<br>
-Id: 1427041461565075466
-<br>
-
-<hr>
-
-</p>
-<p id="1427041545178525700">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@sigfpe @alexselby1770 https://t.co/2jo9KodTJO</p></blockquote>
-<br>
-Timestamp: 2021-8-15 22:56:32
-<br>
-Id: 1427041545178525700
-<br>
-
-<hr>
-
-</p>
-</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+        <!-- This page was generated from Tweet Back Up. -->
+        <link rel="stylesheet" href="../../styles.css">
+        <title>
+            RadishHarmers: 2021-8-15
+        </title>
+    </head>
+    <body>
+        These are all the tweets and replies that @RadishHarmers made on 2021-8-15:
+        <br>
+        <p id="1426698449081282566">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe For what it's worth, I believe the answer should be π/e * erfi(1) [i.e., 2 sqrt(π)/e * the integral from 0 to 1 of e^(t^2) dt], but the erfi(1) is becoming -i for some reason. I get a similar issue with Wolfram Alpha by taking the Laplace Transform of t^(-1/2) * e^(-t)/(1 - t).
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        12
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426698449081282566">
+                1426698449081282566
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 0:13:11
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/sigfpe">
+                @sigfpe
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/sigfpe/status/1426689250729201667">
+                1426689250729201667
+            </a>
+        </p>
+        <p id="1426705782997929986">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe Even more simply, with the Laplace transform of 1/(t^(1/2) - t^(-1/2)), which is the crux of the previous thing, of course. Incidentally, Wolfram Alpha gives me nondeterministic results on these, which is annoying. Also, I have got to start using WolframScript.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        0
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426705782997929986">
+                1426705782997929986
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 0:42:20
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426698449081282566">
+                1426698449081282566
+            </a>
+        </p>
+        <p id="1426737584370225152">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe In more detail, let f(x) = e^(-x^2) and let g(x) = f(x - 1) - f(x + 1). Our integrand is g(x)/x. Note that f is even, and therefore g is odd, and therefore our integrand is even. So instead of integrating from 0 to +∞, we can just as well take half the integral from -∞ to +∞.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        2
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426737584370225152">
+                1426737584370225152
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 2:48:42
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426698449081282566">
+                1426698449081282566
+            </a>
+        </p>
+        <p id="1426737643157606402">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe Integrating from -∞ to +∞ is the same as taking the* Fourier transform at 0, so let's investigate the Fourier transforms here.
+                    <br>
+                    
+                    <br>
+                    [*: We'll use the Fourier transform whose kernel of integration is e^(i x t)]
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        2
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426737643157606402">
+                1426737643157606402
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 2:48:56
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426737584370225152">
+                1426737584370225152
+            </a>
+        </p>
+        <p id="1426737679325085696">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe The Fourier transform of the Gaussian f(x) = e^(-x^2) is famously just a minor reparametrization of itself. On our Fourier transform convention, it specifically comes out to F(t) = sqrt(π) e^(-t^2/4).
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        2
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426737679325085696">
+                1426737679325085696
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 2:49:4
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426737643157606402">
+                1426737643157606402
+            </a>
+        </p>
+        <p id="1426737711780597762">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe Furthermore, the Fourier transform of f(x - 1) is e^(it) F(t), and the Fourier transform of f(x + 1) is symmetrically e^(-it) F(t). Combining these, we get that the Fourier transform of g(x) is G(t) = (e^(it) - e^(-it)) F(t) = sqrt(π) (e^(it) - e^(-it)) e^(-t^2/4).
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        2
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426737711780597762">
+                1426737711780597762
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 2:49:12
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426737679325085696">
+                1426737679325085696
+            </a>
+        </p>
+        <p id="1426737880114794496">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe The Fourier transform of g(x)/x, then, will be an integral of G(t) i, which is to say, an integral of i sqrt(π) (e^(it) - e^(-it)) e^(-t^2/4).
+                    <br>
+                    
+                    <br>
+                    Which integral? Well, our g(x)/x has been chosen to be continuous even at 0, so its Fourier transform has to decay to zero at infinity.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426737880114794496">
+                1426737880114794496
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 2:49:52
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426737711780597762">
+                1426737711780597762
+            </a>
+        </p>
+        <p id="1426738041901756424">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe Alright, let us integrate e^(it) e^(-t^2/4) = e^((1 + it/2)^2 - 1). If we use R(t) to stand for the odd antiderivative of the even function e^(t^2) [the one chosen such that R(0) = 0], then this result is clearly 2/i e^(-1) R(1 + it/2) + C.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426738041901756424">
+                1426738041901756424
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 2:50:31
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426737880114794496">
+                1426737880114794496
+            </a>
+        </p>
+        <p id="1426738193571983360">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe Symmetrically, the integral of e^(-it) e^(-t^2/4) is -2/i e^(-1) R(1 - it/2) + C, and so overall, the integral of G(t) i is 2 sqrt(π) e^(-1) [R(1 + it/2) - R(1 - it/2)] + C.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426738193571983360">
+                1426738193571983360
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 2:51:7
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426738041901756424">
+                1426738041901756424
+            </a>
+        </p>
+        <p id="1426738399197663240">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe We wanted to choose the constant of integration such that this decays to zero at infinity, and a bit of investigation into the nature of R shows that setting C to zero will accomplish this.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426738399197663240">
+                1426738399197663240
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 2:51:56
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426738193571983360">
+                1426738193571983360
+            </a>
+        </p>
+        <p id="1426738466742804481">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe Phew. Summing this all up, the Fourier transform of our even integrand g(x)/x is 2 sqrt(π) e^(-1) [R(1 + it/2) - R(1 - it/2)], and therefore the integral 0 to +∞ of that integrand is 2 sqrt(π)/e R(1) = 2 sqrt(π)/e times the integral from 0 to 1 of e^(t^2).
+                    <br>
+                    
+                    <br>
+                    The End.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        8
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426738466742804481">
+                1426738466742804481
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 2:52:12
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426738399197663240">
+                1426738399197663240
+            </a>
+        </p>
+        <p id="1426738606329278466">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe If there are any typos in the above, I will not correct them. I am only human, not a miracle worker. I cannot type detailed math to perfection on Twitter, the world's worst platform.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        3
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426738606329278466">
+                1426738606329278466
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 2:52:45
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426738466742804481">
+                1426738466742804481
+            </a>
+        </p>
+        <p id="1426767423265546241">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    Basically, life is like this. There's not enough time during the week to do chores, so you have to do them on the weekend.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        7
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        165
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426767423265546241">
+                1426767423265546241
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 4:47:16
+            <br>
+        </p>
+        <p id="1426769881274404869">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    We should ban jokes and music. https://t.co/xU4g52VpcH
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        15
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        460
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426769881274404869">
+                1426769881274404869
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 4:57:2
+            <br>
+        </p>
+        <p id="1426779837667102725">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    For the record, it was this. However, when people delete their tweets, I consider that to end the matter. She recognized it was dumb, and that's that. Hopefully she decides to go yell at her boss's boss, Obama, instead of some random benign nobody for the war now. https://t.co/aWoUUdv2Jz
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        30
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426779837667102725">
+                1426779837667102725
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 5:36:36
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426769881274404869">
+                1426769881274404869
+            </a>
+        </p>
+        <p id="1426781428382064640">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe What were you trying to compute that led you to this?
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426781428382064640">
+                1426781428382064640
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 5:42:55
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/sigfpe">
+                @sigfpe
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/sigfpe/status/1426776952212320261">
+                1426776952212320261
+            </a>
+        </p>
+        <p id="1426786291346251778">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    Doctors have only one job to do (cure things) and yet they rarely do it.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        1
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        102
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426786291346251778">
+                1426786291346251778
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 6:2:14
+            <br>
+        </p>
+        <p id="1426793483046723590">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe I had been thinking maybe this had come from a probabilistic setup, given the Gaussians, but actually, it's a bit tricky to find a direct probabilistic interpretation, given the two terms that do not converge separately.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426793483046723590">
+                1426793483046723590
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 6:30:49
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426781428382064640">
+                1426781428382064640
+            </a>
+        </p>
+        <p id="1426805783069708293">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    Nothing wrong with math. It is music which sucks. https://t.co/v4i11TRWqw
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        1
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        96
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426805783069708293">
+                1426805783069708293
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 7:19:42
+            <br>
+        </p>
+        <p id="1426812543012573189">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @pradnelluru An abrupt withdrawal is the right thing to do, as every slow promise of withdrawal has resulted in this, twenty years going by, never in the end withdrawing, and accomplishing nothing but the misery of occupation all the while.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        21
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426812543012573189">
+                1426812543012573189
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 7:46:33
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/pradnelluru">
+                @pradnelluru
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/pradnelluru/status/1426781386564939776">
+                1426781386564939776
+            </a>
+        </p>
+        <p id="1426813542829854727">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @molemancoyote I used to work for 3blue1brown. Grant does a good job. Most math YouTube content, or most pop math in general, irks me in various ways. I might like to get back into the game myself at some point, but I talk a big game and never follow through.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        9
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426813542829854727">
+                1426813542829854727
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 7:50:32
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/molemancoyote">
+                @molemancoyote
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/molemancoyote/status/1426806550161616899">
+                1426806550161616899
+            </a>
+        </p>
+        <p id="1426935078874144783">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @BlueSunSystems I am the antiwar movement at home.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        12
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426935078874144783">
+                1426935078874144783
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 15:53:28
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/BlueSunSystems">
+                @BlueSunSystems
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/BlueSunSystems/status/1426926036487479302">
+                1426926036487479302
+            </a>
+        </p>
+        <p id="1426936776292175889">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @alexselby1770 @sigfpe Oh, very nice.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        2
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426936776292175889">
+                1426936776292175889
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 16:0:13
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/alexselby1770">
+                @alexselby1770
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/alexselby1770/status/1426896535816708101">
+                1426896535816708101
+            </a>
+        </p>
+        <p id="1426947147639951368">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @alexselby1770 @sigfpe Wolfram Alpha/Mathematica, what are you doing? https://t.co/fTLS0HtESa
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        1
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        16
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426947147639951368">
+                1426947147639951368
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 16:41:26
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426936776292175889">
+                1426936776292175889
+            </a>
+        </p>
+        <p id="1426951747839401990">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @wzey9 @alexselby1770 @sigfpe You can do that, resulting in a multiple of the square root of negative one, but it's not the correct answer for this integral.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426951747839401990">
+                1426951747839401990
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 16:59:42
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/wzey9">
+                @wzey9
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/wzey9/status/1426951293956882433">
+                1426951293956882433
+            </a>
+        </p>
+        <p id="1426954849971810306">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @wzey9 @alexselby1770 @sigfpe No one is saying the logarithm of a negative value would be a positive rational number. It can be taken to be an imaginary number. The base of the log here is e, incidentally. Famously, e^(i π) = -1. This is a way of talking about the dynamics of rotation. See Euler's theorem.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        3
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426954849971810306">
+                1426954849971810306
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 17:12:2
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/wzey9">
+                @wzey9
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/wzey9/status/1426953596029988866">
+                1426953596029988866
+            </a>
+        </p>
+        <p id="1426956352862265349">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 I'm trying to figure out exactly what the core mistake it's making is. It looks like it thinks this is true. But why?
+                    <br>
+                    
+                    <br>
+                    What are the superficial fake poles you are referring to? https://t.co/JBFHokfzMy
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426956352862265349">
+                1426956352862265349
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 17:18:0
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/sigfpe">
+                @sigfpe
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/sigfpe/status/1426953951266566152">
+                1426953951266566152
+            </a>
+        </p>
+        <p id="1426962143463813131">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 Hm, combining these two, we can see where this third comes from. Now to think about what went awry in the first two. https://t.co/TENY2gDhvW
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426962143463813131">
+                1426962143463813131
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 17:41:1
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/sigfpe">
+                @sigfpe
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/sigfpe/status/1426956989200887813">
+                1426956989200887813
+            </a>
+        </p>
+        <p id="1426969139088855048">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 I think what's happening here is two-fold, with the two parts acting oppositely:
+                    <br>
+                    
+                    <br>
+                    The sqrt(a^2) terms are being turned into |a| but should be a in one expression and -a in another, I believe.
+                    <br>
+                    
+                    <br>
+                    On the other hand, the log(...) terms should actually be log(|...|) terms, I believe.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426969139088855048">
+                1426969139088855048
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 18:8:49
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426962143463813131">
+                1426962143463813131
+            </a>
+        </p>
+        <p id="1426970071033909253">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 The first of these mistakes causes the term that shouldn't cancel out to cancel out.
+                    <br>
+                    
+                    <br>
+                    The second of these mistakes causes a term that should cancel out to not cancel out.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        0
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426970071033909253">
+                1426970071033909253
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 18:12:31
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426969139088855048">
+                1426969139088855048
+            </a>
+        </p>
+        <p id="1426971440767700992">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 The log(...) vs log(|...|) mistake is probably from an integration of 1/... somewhere. These log terms should just have died off even within the separate half-line integrals, but because of the branch cut choices were left in.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        0
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426971440767700992">
+                1426971440767700992
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 18:17:57
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426970071033909253">
+                1426970071033909253
+            </a>
+        </p>
+        <p id="1426972486378393609">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 Maybe framing it as "It should have been log(|...|)" isn't the best way to put it either, but the point is that those log terms should have cancelled out except for mistaken differences in branch cut choices.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        0
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426972486378393609">
+                1426972486378393609
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 18:22:7
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426971440767700992">
+                1426971440767700992
+            </a>
+        </p>
+        <p id="1426972685431681024">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 With all this corrected, the answer would have been π erfi(a/2), which is correct.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426972685431681024">
+                1426972685431681024
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 18:22:54
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426972486378393609">
+                1426972486378393609
+            </a>
+        </p>
+        <p id="1426977903317864456">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 These expressions would've been slightly cleaner if I'd stuck with exp(2ax) instead of exp(ax), oh well.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        0
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426977903317864456">
+                1426977903317864456
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 18:43:38
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426972685431681024">
+                1426972685431681024
+            </a>
+        </p>
+        <p id="1426989362647080972">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @Sturgeons_Law @SomeStingray @SandalBurn What do you mean by thinking of physical spaces in geometrical terms? Is that not the normal way people think of physical spaces?
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        5
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1426989362647080972">
+                1426989362647080972
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 19:29:10
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/Sturgeons_Law">
+                @Sturgeons_Law
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/Sturgeons_Law/status/1426983585571954689">
+                1426983585571954689
+            </a>
+        </p>
+        <p id="1427036665768550402">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 I can sometimes get it to forget the hypergeometric component entirely. But it's nondeterministic in this regard. Annoying. https://t.co/cJTq7igrdg
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1427036665768550402">
+                1427036665768550402
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 22:37:8
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1426977903317864456">
+                1426977903317864456
+            </a>
+        </p>
+        <p id="1427040611408961541">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 Yup, different results for exactly the same input. One wrong, one right.
+                    <br>
+                    
+                    <br>
+                    Here, I just did it again, literally just hitting refresh. [This time, both results have the branch cut interpretation issues, but the hypergeometric term missing the first time is an even worse mistake.] https://t.co/FkK6JPQeEI
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        2
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1427040611408961541">
+                1427040611408961541
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 22:52:49
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/sigfpe">
+                @sigfpe
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/sigfpe/status/1427037911526961156">
+                1427037911526961156
+            </a>
+        </p>
+        <p id="1427041225572601856">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 I'd always had the same annoyance with Wolfram Alpha as you. But this non-determinism has finally convinced me to install Wolfram Script, Wolfram Engine, etc. But I've also discovered Wolfram Cloud Notebooks, so maybe I didn't need to waste space on those installations. Oh well.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        0
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1427041225572601856">
+                1427041225572601856
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 22:55:15
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1427040611408961541">
+                1427040611408961541
+            </a>
+        </p>
+        <p id="1427041461565075466">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 Yeah, it was me, over here. Note the followup specifically about this. https://t.co/OG4q9Ds435
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        0
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1427041461565075466">
+                1427041461565075466
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 22:56:12
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/sigfpe">
+                @sigfpe
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/sigfpe/status/1427041092780756998">
+                1427041092780756998
+            </a>
+        </p>
+        <p id="1427041545178525700">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2021-8-15
+                    </span>
+                    <br>
+                    @sigfpe @alexselby1770 https://t.co/2jo9KodTJO
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2021/8/15.html#1427041545178525700">
+                1427041545178525700
+            </a>
+            <br>
+            Timestamp: 
+            2021-8-15 at 22:56:32
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1427041461565075466">
+                1427041461565075466
+            </a>
+        </p>
+    </body>
 </html>

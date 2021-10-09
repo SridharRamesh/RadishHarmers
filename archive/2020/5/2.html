@@ -1,473 +1,1931 @@
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!-- This page was generated from TweetParser. -->
-<link rel="stylesheet" href="../../styles.css">
-</head>
-<body>
-These are all the tweets and replies that I made on 2020-5-2
-<hr>
-<p id="1256386943635599362">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic Consider first y^(n - 1)/(1 + y)^n, for fixed n. At what value of y is this maximized? Taking its derivative, we get (n - 1 - y)y^(n - 2)/(1 + y)^n, which is zero when y = n - 1. Thus, it is maximized at y = n - 1, making its maximum value (n - 1)^(n - 1)/n^n.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 0:56:4
-<br>
-Id: 1256386943635599362
-<br>
-
-<hr>
-
-</p>
-<p id="1256387159428300800">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic Next, since y^k is an increasing function of k, this tells us y^k/(1 + y)^n is &amp;lt;= (n - 1)^(n - 1)/n^n, when we restrict k to natural numbers less than n.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 0:56:56
-<br>
-Id: 1256387159428300800
-<br>
-
-<hr>
-
-</p>
-<p id="1256387369030365184">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic Finally, if we replace y with (y/x), and then multiply both sides by x^n, we get the inequality as stated.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 0:57:45
-<br>
-Id: 1256387369030365184
-<br>
-
-<hr>
-
-</p>
-<p id="1256390932829745152">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@blackmilosevic @hobartmariner @nntaleb Yes, good catch, I should&#39;ve spelled this out.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 1:11:55
-<br>
-Id: 1256390932829745152
-<br>
-
-<hr>
-
-</p>
-<p id="1256391145443164161">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic Typos in the above (alas, Twitter has no editing for these little things):<br><br>Where I wrote a derivative of &quot;(n - 1 - y)y^(n - 2)/(1 + y)^n&quot;, the last exponent should have been n + 1.<br><br>When I wrote &quot;multiply both sides&quot;, I meant &quot;multiply numerator and denominator&quot;.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 1:12:46
-<br>
-Id: 1256391145443164161
-<br>
-
-<hr>
-
-</p>
-<p id="1256391300334653442">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic The original reasoning presumes y is at least 1. After y is replaced with y/x, this becomes the presumption that y is at least x, and we can always swap x and y to achieve this without loss of generality.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 1:13:23
-<br>
-Id: 1256391300334653442
-<br>
-
-<hr>
-
-</p>
-<p id="1256406167967932417">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic But a better conceptual approach that illustrates further generality is this:<br><br>The left hand side is invariant under rescaling x and y by the same factor, so let us rescale them to make x + y = n. Then the inequality is equivalent to showing that y^k x^(n - k) ≤ (n - 1)^(n - 1).</p></blockquote>
-<br>
-Timestamp: 2020-5-2 2:12:27
-<br>
-Id: 1256406167967932417
-<br>
-
-<hr>
-
-</p>
-<p id="1256406197772660738">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic We&#39;ll show more generally how to optimize x^j y^k when x + y is constrained to a constant and j + k is also constrained to a constant. From this, we&#39;ll know how to bound the expression in question.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 2:12:35
-<br>
-Id: 1256406197772660738
-<br>
-
-<hr>
-
-</p>
-<p id="1256406241607323648">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic Note that the x and y derivatives of x^j y^k are this expression times j/x and times k/y, respectively. These must be equal if we&#39;re to optimize this expression while x + y is constrained to a constant. Thus, x and y must be in the same ratio as j and k.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 2:12:45
-<br>
-Id: 1256406241607323648
-<br>
-
-<hr>
-
-</p>
-<p id="1256406312864428032">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic Thus, we are optimizing an expression proportional to j^j k^k, with j + k constrained to a constant.<br><br>This is an exponential function applied to the Shannon entropy of a probability distribution with probabilities proportional to j and k.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 2:13:2
-<br>
-Id: 1256406312864428032
-<br>
-
-<hr>
-
-</p>
-<p id="1256406427876372480">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic And Shannon entropy famously is maximized by making j and k as far apart as possible.<br><br>In our case, j and k are constrained to be positive integers which sum to n, so they are made as far apart as possible by setting one to 1 and the other to n - 1.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 2:13:29
-<br>
-Id: 1256406427876372480
-<br>
-
-<hr>
-
-</p>
-<p id="1256406630352240642">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic As we saw that x and y must be in the same ratio as j and k, and we constrained them to have the same sum n, we find that x and y must take the same values 1 and n - 1 accordingly.<br><br>Thus, our maximum achievable value is 1^1 * (n - 1)^(n - 1), which is what we sought to show. QED.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 2:14:18
-<br>
-Id: 1256406630352240642
-<br>
-
-<hr>
-
-</p>
-<p id="1256406995407601675">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic I&#39;m sure there are a bunch of innocuous typos in the above which I will not bother to correct.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 2:15:45
-<br>
-Id: 1256406995407601675
-<br>
-
-<hr>
-
-</p>
-<p id="1256408646277349376">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@nntaleb @blackmilosevic [I guess the one clarification to say is that in the line &quot;And Shannon entropy famously is maximized by making j and k as far apart as possible&quot;, people normally think of this as minimization, using a differing convention about bases being above or below 1, but whatever.]</p></blockquote>
-<br>
-Timestamp: 2020-5-2 2:22:18
-<br>
-Id: 1256408646277349376
-<br>
-
-<hr>
-
-</p>
-<p id="1256425828260425729">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">They say child molesters have it bad in prison, but that&#39;s nothing compared to how other criminals are treated. The infamous Boston Prisoner Strangler did not fare long in lockup before being viciously strangled by prisoners, who are notoriously hostile to prisoner stranglers.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 3:30:35
-<br>
-Id: 1256425828260425729
-<br>
-
-<hr>
-
-</p>
-<p id="1256445801779408897">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">All my most cherished memories, I don&#39;t even remember the thing anymore. I just know facts of my history, and pretend memory of memory is memory. Lifelong games of self-telephone. This is bullshit. I might as well be granted knowledge of future events, at this level of sharpness.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 4:49:57
-<br>
-Id: 1256445801779408897
-<br>
-
-<hr>
-
-</p>
-<p id="1256448568686268421">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I only have two interests. My life is so short of joy. If I only had one interest, I&#39;d be twice as good at it. Best in the world. My life would be amazing.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 5:0:57
-<br>
-Id: 1256448568686268421
-<br>
-
-<hr>
-
-</p>
-<p id="1256449302647488513">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@silvascientist I&#39;m halfway there.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 5:3:52
-<br>
-Id: 1256449302647488513
-<br>
-
-<hr>
-
-</p>
-<p id="1256452183966601216">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@raktagulikaa @nntaleb For what it&#39;s worth, the last inequality here is a standard inequality as well. Letting p = k/n, q = 1 - p, and taking the negated logarithm of the left-hand side, it is the Shannon entropy of a {p, q} Bernoulli variable.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 5:15:19
-<br>
-Id: 1256452183966601216
-<br>
-
-<hr>
-
-</p>
-<p id="1256452532437692422">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@raktagulikaa @nntaleb A standard result is that this entropy decreases as p and q move further apart. The furthest apart we&#39;ve allowed ourselves to make the two exponents is 1 and n - 1, so the value in this case bounds all others.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 5:16:42
-<br>
-Id: 1256452532437692422
-<br>
-
-<hr>
-
-</p>
-<p id="1256455662600626177">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Tearing myself a new one, so I can get out of the bathroom in half the time.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 5:29:8
-<br>
-Id: 1256455662600626177
-<br>
-
-<hr>
-
-</p>
-<p id="1256456305780424713">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Each day, oscillating between highs and lows, optimism and pessimism, I have my moments of clarity, but no oracle to confirm for me which they were, no manifest distinction from their opposites. I look back later and still don&#39;t know which moods to trust.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 5:31:41
-<br>
-Id: 1256456305780424713
-<br>
-
-<hr>
-
-</p>
-<p id="1256457639934021632">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I regret not doing things ten years ago which I&#39;m not doing currently either, all the better to continue regretting ten years hence.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 5:36:59
-<br>
-Id: 1256457639934021632
-<br>
-
-<hr>
-
-</p>
-<p id="1256458838703833088">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">You only get so much time in life. We all die some day. This is why I studiously avoid building up accomplishments and goodwill, so it won&#39;t be so sad when it happens.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 5:41:45
-<br>
-Id: 1256458838703833088
-<br>
-
-<hr>
-
-</p>
-<p id="1256462216632696832">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Tearing myself a new one (my eyes off of the computer screen for once).</p></blockquote>
-<br>
-Timestamp: 2020-5-2 5:55:11
-<br>
-Id: 1256462216632696832
-<br>
-
-<hr>
-
-</p>
-<p id="1256649935568752646">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;m trying to get better about receiving compliments. That is, I&#39;m trying to receive more compliments.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 18:21:6
-<br>
-Id: 1256649935568752646
-<br>
-
-<hr>
-
-</p>
-<p id="1256650198312517634">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Don&#39;t worry. They&#39;re called murder hornets because of how notoriously easy they are to murder.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 18:22:9
-<br>
-Id: 1256650198312517634
-<br>
-
-<hr>
-
-</p>
-<p id="1256650412490399746">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@DoubleEBooks I&#39;m no good at fishing.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 18:23:0
-<br>
-Id: 1256650412490399746
-<br>
-
-<hr>
-
-</p>
-<p id="1256652042409566208">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@wcthunderesq I was murdered once as a child, thus developing a lifelong immunity to murder.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 18:29:29
-<br>
-Id: 1256652042409566208
-<br>
-
-<hr>
-
-</p>
-<p id="1256652700676210688">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I was murdered once as a child, thus developing a lifelong immunity to murder.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 18:32:5
-<br>
-Id: 1256652700676210688
-<br>
-
-<hr>
-
-</p>
-<p id="1256653089672704002">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@zlingray Which part?</p></blockquote>
-<br>
-Timestamp: 2020-5-2 18:33:38
-<br>
-Id: 1256653089672704002
-<br>
-
-<hr>
-
-</p>
-<p id="1256654117663117317">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@zlingray This isn&#39;t all language. This is just the Indo-European language family. Linguists generally don&#39;t find proposals for larger language families to be well-evidenced. But there are very clear systematic correspondences in this particular family.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 18:37:43
-<br>
-Id: 1256654117663117317
-<br>
-
-<hr>
-
-</p>
-<p id="1256658682059919360">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@zlingray It&#39;s more than &quot;words sound the same&quot;, though. That&#39;s why the linguists reject other crank family theories. It&#39;s very specific falsifiable laws, like Grimm&#39;s Law, that determine how the sounds in one language relate to those in another.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 18:55:52
-<br>
-Id: 1256658682059919360
-<br>
-
-<hr>
-
-</p>
-<p id="1256659129386573824">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@zlingray The whole point is to look for falsifiable/verifiable such correspondences, and then test them. You can use these to actually predict what the word in one language should be in another, without knowing it ahead of time, and then go test the correctness of the theory.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 18:57:38
-<br>
-Id: 1256659129386573824
-<br>
-
-<hr>
-
-</p>
-<p id="1256659316498726912">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@zlingray That was the evidence which convinced philologists, the systematic rules of the correspondence, not just random &quot;Oh, lots of these words sound sort of like those words&quot; observations, which I agree would not do it for me either.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 18:58:23
-<br>
-Id: 1256659316498726912
-<br>
-
-<hr>
-
-</p>
-<p id="1256659920100954112">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@zlingray The evidence for it is as strong and systematic as the evidence that any particular clade of animals derived from a common ancestor. Indeed, historically, it was the success of the linguists&#39; theories which inspired Darwin.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 19:0:47
-<br>
-Id: 1256659920100954112
-<br>
-
-<hr>
-
-</p>
-<p id="1256662772684906497">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@zlingray The discovery of the Indo-European language family is historically the reason the Nazis got all hung up on &quot;Aryans&quot; and became fond of swastikas. That did happen. And yet the discovery is correct.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 19:12:7
-<br>
-Id: 1256662772684906497
-<br>
-
-<hr>
-
-</p>
-<p id="1256665284120850434">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@imaginary_nums @zlingray @dbweissman Let&#39;s put it this way: there&#39;s no DNA sequencing of languages as such, but the evidence for common descent in biology was understood long before DNA sequencing, or even DNA itself, was discovered.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 19:22:6
-<br>
-Id: 1256665284120850434
-<br>
-
-<hr>
-
-</p>
-<p id="1256680841662607362">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@imaginary_nums @zlingray @dbweissman My actual feelings are that the systematic sound shift rules yield more definitive relations than morphology-based clades which can be fooled by parallel/convergent evolution or just focusing too much on a few ostentatious features. But I restrained myself from saying this.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 20:23:55
-<br>
-Id: 1256680841662607362
-<br>
-
-<hr>
-
-</p>
-<p id="1256682182791307265">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">@imaginary_nums @zlingray @dbweissman Modern phylogeny does have DNA sequencing, which puts everything else to shame. But we must acknowledge pre-DNA cladistics still generally got a lot right. They were able to soundly recognize apes form a clade including humans, birds are part of the dinosaur clade, etc.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 20:29:15
-<br>
-Id: 1256682182791307265
-<br>
-
-<hr>
-
-</p>
-<p id="1256686402571509764">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">STEM stands for Science Theology English and Monkeys. The current consensus among scholars is that it is a polyphyletic grouping, or paraphyletic if monkeys are taken to include apes.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 20:46:1
-<br>
-Id: 1256686402571509764
-<br>
-
-<hr>
-
-</p>
-<p id="1256689530721251330">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Biologists are now in consensus that the two major classes of animals are arthrous (for example, the brahminy blind snake or the European legless lizard) and anarthrous (for example, chimpanzees or mice). But it is not yet understood what triggered this evolutionary divergence.</p></blockquote>
-<br>
-Timestamp: 2020-5-2 20:58:26
-<br>
-Id: 1256689530721251330
-<br>
-
-<hr>
-
-</p>
-</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+        <!-- This page was generated from Tweet Back Up. -->
+        <link rel="stylesheet" href="../../styles.css">
+        <title>
+            RadishHarmers: 2020-5-2
+        </title>
+    </head>
+    <body>
+        These are all the tweets and replies that @RadishHarmers made on 2020-5-2:
+        <br>
+        <p id="1256386943635599362">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic Consider first y^(n - 1)/(1 + y)^n, for fixed n. At what value of y is this maximized? Taking its derivative, we get (n - 1 - y)y^(n - 2)/(1 + y)^n, which is zero when y = n - 1. Thus, it is maximized at y = n - 1, making its maximum value (n - 1)^(n - 1)/n^n.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        1
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        64
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256386943635599362">
+                1256386943635599362
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 0:56:4
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/nntaleb">
+                @nntaleb
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/nntaleb/status/1256384890091823104">
+                1256384890091823104
+            </a>
+        </p>
+        <p id="1256387159428300800">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic Next, since y^k is an increasing function of k, this tells us y^k/(1 + y)^n is &lt;= (n - 1)^(n - 1)/n^n, when we restrict k to natural numbers less than n.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        1
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        26
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256387159428300800">
+                1256387159428300800
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 0:56:56
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256386943635599362">
+                1256386943635599362
+            </a>
+        </p>
+        <p id="1256387369030365184">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic Finally, if we replace y with (y/x), and then multiply both sides by x^n, we get the inequality as stated.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        2
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        23
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256387369030365184">
+                1256387369030365184
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 0:57:45
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256387159428300800">
+                1256387159428300800
+            </a>
+        </p>
+        <p id="1256390932829745152">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @blackmilosevic @hobartmariner @nntaleb Yes, good catch, I should've spelled this out.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        3
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256390932829745152">
+                1256390932829745152
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 1:11:55
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/blackmilosevic">
+                @blackmilosevic
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/blackmilosevic/status/1256390685277556737">
+                1256390685277556737
+            </a>
+        </p>
+        <p id="1256391145443164161">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic Typos in the above (alas, Twitter has no editing for these little things):
+                    <br>
+                    
+                    <br>
+                    Where I wrote a derivative of "(n - 1 - y)y^(n - 2)/(1 + y)^n", the last exponent should have been n + 1.
+                    <br>
+                    
+                    <br>
+                    When I wrote "multiply both sides", I meant "multiply numerator and denominator".
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        4
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256391145443164161">
+                1256391145443164161
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 1:12:46
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256387369030365184">
+                1256387369030365184
+            </a>
+        </p>
+        <p id="1256391300334653442">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic The original reasoning presumes y is at least 1. After y is replaced with y/x, this becomes the presumption that y is at least x, and we can always swap x and y to achieve this without loss of generality.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        6
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256391300334653442">
+                1256391300334653442
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 1:13:23
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256391145443164161">
+                1256391145443164161
+            </a>
+        </p>
+        <p id="1256406167967932417">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic But a better conceptual approach that illustrates further generality is this:
+                    <br>
+                    
+                    <br>
+                    The left hand side is invariant under rescaling x and y by the same factor, so let us rescale them to make x + y = n. Then the inequality is equivalent to showing that y^k x^(n - k) ≤ (n - 1)^(n - 1).
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        4
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256406167967932417">
+                1256406167967932417
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 2:12:27
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256391300334653442">
+                1256391300334653442
+            </a>
+        </p>
+        <p id="1256406197772660738">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic We'll show more generally how to optimize x^j y^k when x + y is constrained to a constant and j + k is also constrained to a constant. From this, we'll know how to bound the expression in question.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        3
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256406197772660738">
+                1256406197772660738
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 2:12:35
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256406167967932417">
+                1256406167967932417
+            </a>
+        </p>
+        <p id="1256406241607323648">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic Note that the x and y derivatives of x^j y^k are this expression times j/x and times k/y, respectively. These must be equal if we're to optimize this expression while x + y is constrained to a constant. Thus, x and y must be in the same ratio as j and k.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        2
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256406241607323648">
+                1256406241607323648
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 2:12:45
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256406197772660738">
+                1256406197772660738
+            </a>
+        </p>
+        <p id="1256406312864428032">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic Thus, we are optimizing an expression proportional to j^j k^k, with j + k constrained to a constant.
+                    <br>
+                    
+                    <br>
+                    This is an exponential function applied to the Shannon entropy of a probability distribution with probabilities proportional to j and k.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        4
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256406312864428032">
+                1256406312864428032
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 2:13:2
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256406241607323648">
+                1256406241607323648
+            </a>
+        </p>
+        <p id="1256406427876372480">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic And Shannon entropy famously is maximized by making j and k as far apart as possible.
+                    <br>
+                    
+                    <br>
+                    In our case, j and k are constrained to be positive integers which sum to n, so they are made as far apart as possible by setting one to 1 and the other to n - 1.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        5
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256406427876372480">
+                1256406427876372480
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 2:13:29
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256406312864428032">
+                1256406312864428032
+            </a>
+        </p>
+        <p id="1256406630352240642">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic As we saw that x and y must be in the same ratio as j and k, and we constrained them to have the same sum n, we find that x and y must take the same values 1 and n - 1 accordingly.
+                    <br>
+                    
+                    <br>
+                    Thus, our maximum achievable value is 1^1 * (n - 1)^(n - 1), which is what we sought to show. QED.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        3
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256406630352240642">
+                1256406630352240642
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 2:14:18
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256406427876372480">
+                1256406427876372480
+            </a>
+        </p>
+        <p id="1256406995407601675">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic I'm sure there are a bunch of innocuous typos in the above which I will not bother to correct.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256406995407601675">
+                1256406995407601675
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 2:15:45
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256406630352240642">
+                1256406630352240642
+            </a>
+        </p>
+        <p id="1256408646277349376">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @nntaleb @blackmilosevic [I guess the one clarification to say is that in the line "And Shannon entropy famously is maximized by making j and k as far apart as possible", people normally think of this as minimization, using a differing convention about bases being above or below 1, but whatever.]
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        1
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        8
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256408646277349376">
+                1256408646277349376
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 2:22:18
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256406995407601675">
+                1256406995407601675
+            </a>
+        </p>
+        <p id="1256425828260425729">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    They say child molesters have it bad in prison, but that's nothing compared to how other criminals are treated. The infamous Boston Prisoner Strangler did not fare long in lockup before being viciously strangled by prisoners, who are notoriously hostile to prisoner stranglers.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        4
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        30
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256425828260425729">
+                1256425828260425729
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 3:30:35
+            <br>
+        </p>
+        <p id="1256445801779408897">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    All my most cherished memories, I don't even remember the thing anymore. I just know facts of my history, and pretend memory of memory is memory. Lifelong games of self-telephone. This is bullshit. I might as well be granted knowledge of future events, at this level of sharpness.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        3
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        64
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256445801779408897">
+                1256445801779408897
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 4:49:57
+            <br>
+        </p>
+        <p id="1256448568686268421">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    I only have two interests. My life is so short of joy. If I only had one interest, I'd be twice as good at it. Best in the world. My life would be amazing.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        2
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        20
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256448568686268421">
+                1256448568686268421
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 5:0:57
+            <br>
+        </p>
+        <p id="1256449302647488513">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @silvascientist I'm halfway there.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256449302647488513">
+                1256449302647488513
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 5:3:52
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/silvascientist">
+                @silvascientist
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/silvascientist/status/1256449193725456384">
+                1256449193725456384
+            </a>
+        </p>
+        <p id="1256452183966601216">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @raktagulikaa @nntaleb For what it's worth, the last inequality here is a standard inequality as well. Letting p = k/n, q = 1 - p, and taking the negated logarithm of the left-hand side, it is the Shannon entropy of a {p, q} Bernoulli variable.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        11
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256452183966601216">
+                1256452183966601216
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 5:15:19
+            <br>
+            In reply to user who no longer can be found (RIP).
+            <br>
+            In reply to tweet ID: 1256427595924516864
+        </p>
+        <p id="1256452532437692422">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @raktagulikaa @nntaleb A standard result is that this entropy decreases as p and q move further apart. The furthest apart we've allowed ourselves to make the two exponents is 1 and n - 1, so the value in this case bounds all others.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        3
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256452532437692422">
+                1256452532437692422
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 5:16:42
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256452183966601216">
+                1256452183966601216
+            </a>
+        </p>
+        <p id="1256455662600626177">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    Tearing myself a new one, so I can get out of the bathroom in half the time.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        20
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256455662600626177">
+                1256455662600626177
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 5:29:8
+            <br>
+        </p>
+        <p id="1256456305780424713">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    Each day, oscillating between highs and lows, optimism and pessimism, I have my moments of clarity, but no oracle to confirm for me which they were, no manifest distinction from their opposites. I look back later and still don't know which moods to trust.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        2
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        19
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256456305780424713">
+                1256456305780424713
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 5:31:41
+            <br>
+        </p>
+        <p id="1256457639934021632">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    I regret not doing things ten years ago which I'm not doing currently either, all the better to continue regretting ten years hence.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        3
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        23
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256457639934021632">
+                1256457639934021632
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 5:36:59
+            <br>
+        </p>
+        <p id="1256458838703833088">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    You only get so much time in life. We all die some day. This is why I studiously avoid building up accomplishments and goodwill, so it won't be so sad when it happens.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        6
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        100
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256458838703833088">
+                1256458838703833088
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 5:41:45
+            <br>
+        </p>
+        <p id="1256462216632696832">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    Tearing myself a new one (my eyes off of the computer screen for once).
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        5
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256462216632696832">
+                1256462216632696832
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 5:55:11
+            <br>
+        </p>
+        <p id="1256649935568752646">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    I'm trying to get better about receiving compliments. That is, I'm trying to receive more compliments.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        5
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        73
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256649935568752646">
+                1256649935568752646
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 18:21:6
+            <br>
+        </p>
+        <p id="1256650198312517634">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    Don't worry. They're called murder hornets because of how notoriously easy they are to murder.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        6
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        97
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256650198312517634">
+                1256650198312517634
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 18:22:9
+            <br>
+        </p>
+        <p id="1256650412490399746">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @DoubleEBooks I'm no good at fishing.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        2
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256650412490399746">
+                1256650412490399746
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 18:23:0
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/DoubleEBooks">
+                @DoubleEBooks
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/DoubleEBooks/status/1256650268734717957">
+                1256650268734717957
+            </a>
+        </p>
+        <p id="1256652042409566208">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @wcthunderesq I was murdered once as a child, thus developing a lifelong immunity to murder.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        1
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        4
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256652042409566208">
+                1256652042409566208
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 18:29:29
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/wcthunderesq">
+                @wcthunderesq
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/wcthunderesq/status/1256651089878716416">
+                1256651089878716416
+            </a>
+        </p>
+        <p id="1256652700676210688">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    I was murdered once as a child, thus developing a lifelong immunity to murder.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        6
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        74
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256652700676210688">
+                1256652700676210688
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 18:32:5
+            <br>
+        </p>
+        <p id="1256653089672704002">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @zlingray Which part?
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256653089672704002">
+                1256653089672704002
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 18:33:38
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/zlingray">
+                @zlingray
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/zlingray/status/1256651946921881600">
+                1256651946921881600
+            </a>
+        </p>
+        <p id="1256654117663117317">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @zlingray This isn't all language. This is just the Indo-European language family. Linguists generally don't find proposals for larger language families to be well-evidenced. But there are very clear systematic correspondences in this particular family.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        8
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256654117663117317">
+                1256654117663117317
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 18:37:43
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/zlingray">
+                @zlingray
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/zlingray/status/1256653596784947200">
+                1256653596784947200
+            </a>
+        </p>
+        <p id="1256658682059919360">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @zlingray It's more than "words sound the same", though. That's why the linguists reject other crank family theories. It's very specific falsifiable laws, like Grimm's Law, that determine how the sounds in one language relate to those in another.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        5
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256658682059919360">
+                1256658682059919360
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 18:55:52
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/zlingray">
+                @zlingray
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/zlingray/status/1256657074689208320">
+                1256657074689208320
+            </a>
+        </p>
+        <p id="1256659129386573824">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @zlingray The whole point is to look for falsifiable/verifiable such correspondences, and then test them. You can use these to actually predict what the word in one language should be in another, without knowing it ahead of time, and then go test the correctness of the theory.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        4
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256659129386573824">
+                1256659129386573824
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 18:57:38
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256658682059919360">
+                1256658682059919360
+            </a>
+        </p>
+        <p id="1256659316498726912">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @zlingray That was the evidence which convinced philologists, the systematic rules of the correspondence, not just random "Oh, lots of these words sound sort of like those words" observations, which I agree would not do it for me either.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        4
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256659316498726912">
+                1256659316498726912
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 18:58:23
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256659129386573824">
+                1256659129386573824
+            </a>
+        </p>
+        <p id="1256659920100954112">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @zlingray The evidence for it is as strong and systematic as the evidence that any particular clade of animals derived from a common ancestor. Indeed, historically, it was the success of the linguists' theories which inspired Darwin.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        4
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256659920100954112">
+                1256659920100954112
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 19:0:47
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256659316498726912">
+                1256659316498726912
+            </a>
+        </p>
+        <p id="1256662772684906497">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @zlingray The discovery of the Indo-European language family is historically the reason the Nazis got all hung up on "Aryans" and became fond of swastikas. That did happen. And yet the discovery is correct.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        2
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256662772684906497">
+                1256662772684906497
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 19:12:7
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/zlingray">
+                @zlingray
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/zlingray/status/1256658363653341184">
+                1256658363653341184
+            </a>
+        </p>
+        <p id="1256665284120850434">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @imaginary_nums @zlingray @dbweissman Let's put it this way: there's no DNA sequencing of languages as such, but the evidence for common descent in biology was understood long before DNA sequencing, or even DNA itself, was discovered.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        2
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256665284120850434">
+                1256665284120850434
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 19:22:6
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/imaginary_nums">
+                @imaginary_nums
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/imaginary_nums/status/1256662756696002560">
+                1256662756696002560
+            </a>
+        </p>
+        <p id="1256680841662607362">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @imaginary_nums @zlingray @dbweissman My actual feelings are that the systematic sound shift rules yield more definitive relations than morphology-based clades which can be fooled by parallel/convergent evolution or just focusing too much on a few ostentatious features. But I restrained myself from saying this.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        2
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256680841662607362">
+                1256680841662607362
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 20:23:55
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/imaginary_nums">
+                @imaginary_nums
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/imaginary_nums/status/1256668876454019072">
+                1256668876454019072
+            </a>
+        </p>
+        <p id="1256682182791307265">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    @imaginary_nums @zlingray @dbweissman Modern phylogeny does have DNA sequencing, which puts everything else to shame. But we must acknowledge pre-DNA cladistics still generally got a lot right. They were able to soundly recognize apes form a clade including humans, birds are part of the dinosaur clade, etc.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        1
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256682182791307265">
+                1256682182791307265
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 20:29:15
+            <br>
+            In reply to user: 
+            <a href="https://twitter.com/RadishHarmers">
+                @RadishHarmers
+            </a>
+            <br>
+            In reply to tweet ID: 
+            <a href="https://twitter.com/RadishHarmers/status/1256680841662607362">
+                1256680841662607362
+            </a>
+        </p>
+        <p id="1256686402571509764">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    STEM stands for Science Theology English and Monkeys. The current consensus among scholars is that it is a polyphyletic grouping, or paraphyletic if monkeys are taken to include apes.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        1
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        10
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256686402571509764">
+                1256686402571509764
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 20:46:1
+            <br>
+        </p>
+        <p id="1256689530721251330">
+            <hr>
+            <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                    <img class="avi" src="../../icons/avi.jpg">
+                    <span class="display-name">
+                        Sridhar Ramesh
+                    </span>
+                    <span class="at-name">
+                        @RadishHarmers
+                    </span>
+                    <span class="timestamp">
+                        ·
+                        2020-5-2
+                    </span>
+                    <br>
+                    Biologists are now in consensus that the two major classes of animals are arthrous (for example, the brahminy blind snake or the European legless lizard) and anarthrous (for example, chimpanzees or mice). But it is not yet understood what triggered this evolutionary divergence.
+                    <br>
+                    <br>
+                    <span class="counters">
+                        <span class="Retweet" alt="Retweet icon">
+                        </span>
+                        0
+                        <span class="Like" alt="Like icon">
+                        </span>
+                        6
+                    </span>
+                </p>
+            </blockquote>
+            <br>
+            Id: 
+            <a href="../../2020/5/2.html#1256689530721251330">
+                1256689530721251330
+            </a>
+            <br>
+            Timestamp: 
+            2020-5-2 at 20:58:26
+            <br>
+        </p>
+    </body>
 </html>
