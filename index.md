@@ -1,13 +1,4 @@
 
 # The RadishHarmers tweet archive.
 
-For now, just try going to something like <https://sridharramesh.github.io/RadishHarmers/archive/2020/6/24.html>.
-
-TODO:
-* Add proper indexing.
-* Make things less ugly.
-* Show Like and RT counts.
-* Differentiate RTs from original tweets.
-* Anchor elements to allow linking to individual tweets.
-* Display quote tweets, replies, and threads with links or embeddings back to other tweets on this page or to Twitter.
-* Show embedded media (images and videos).
+For now, just try going to something like <https://sridharramesh.github.io/RadishHarmers/archive/2020/6/24.html>. I will eventually add proper index pages and all the other bells and whistles.
