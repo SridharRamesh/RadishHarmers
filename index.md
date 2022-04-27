@@ -1,7 +1,7 @@
 
 # The RadishHarmers tweet archive.
 
-For now, just try going to something like <https://sridharramesh.github.io/RadishHarmers/website/2020/6/24.html>. I will eventually add proper index pages and all the other bells and whistles.
+For now, just try going to something like <https://sridharramesh.github.io/RadishHarmers/website/2020/4/16.html>. I will eventually add proper index pages and all the other bells and whistles.
 
 This was generated using the code from <https://github.com/SridharRamesh/TweetBackUp>.
 
